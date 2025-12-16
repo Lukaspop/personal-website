@@ -8,6 +8,7 @@ import { Cross as Hamburger } from "hamburger-react";
 import { toEn } from "@/lib/routeMap";
 
 type Slider = { x: number; w: number };
+type Phase = "closed" | "rounding" | "expanding";
 
 function normalizePath(p: string) {
   if (!p) return "/cs";
@@ -33,7 +34,21 @@ function getActiveIndex(items: { href: string }[], pathname: string) {
 export default function NavbarCs() {
   const pathname = usePathname();
   const router = useRouter();
-  const [menuOpen, setMenuOpen] = useState(false);
+
+  const [open, setOpen] = useState(false);
+  const [phase, setPhase] = useState<Phase>("closed");
+
+  const openRef = useRef(open);
+  useEffect(() => {
+    openRef.current = open;
+  }, [open]);
+
+  const phaseRef = useRef(phase);
+  useEffect(() => {
+    phaseRef.current = phase;
+  }, [phase]);
+
+  const timers = useRef<number[]>([]);
 
   const items = useMemo(
     () => [
@@ -45,11 +60,53 @@ export default function NavbarCs() {
     []
   );
 
-  useEffect(() => setMenuOpen(false), [pathname]);
+  function clearTimers() {
+    timers.current.forEach((t) => window.clearTimeout(t));
+    timers.current = [];
+  }
 
   useEffect(() => {
-    const mq = window.matchMedia("(min-width: 768px)");
-    const handler = () => mq.matches && setMenuOpen(false);
+    return () => clearTimers();
+  }, []);
+
+  function setOpenTwoPhase(next: boolean) {
+    clearTimers();
+
+    const currentOpen = openRef.current;
+    const currentPhase = phaseRef.current;
+
+    if (!next && !currentOpen && currentPhase === "closed") {
+      return;
+    }
+
+    if (next) {
+      setOpen(true);
+      setPhase("rounding");
+      timers.current.push(window.setTimeout(() => setPhase("expanding"), 140));
+    } else {
+      setPhase("rounding");
+      timers.current.push(
+        window.setTimeout(() => {
+          setOpen(false);
+          setPhase("closed");
+        }, 220)
+      );
+    }
+  }
+
+  const toggleMenu = (value: boolean | ((prev: boolean) => boolean)) => {
+    const prev = openRef.current;
+    const next = typeof value === "function" ? value(prev) : value;
+    setOpenTwoPhase(next);
+  };
+
+  useEffect(() => {
+    if (openRef.current) setOpenTwoPhase(false);
+  }, [pathname]);
+
+  useEffect(() => {
+    const mq = window.matchMedia("(min-width: 456px)");
+    const handler = () => mq.matches && setOpenTwoPhase(false);
     handler();
     mq.addEventListener("change", handler);
     return () => mq.removeEventListener("change", handler);
@@ -80,10 +137,7 @@ export default function NavbarCs() {
       const cr = container.getBoundingClientRect();
       const r = el.getBoundingClientRect();
 
-      setSlider({
-        x: Math.round(r.left - cr.left),
-        w: Math.round(r.width),
-      });
+      setSlider({ x: Math.round(r.left - cr.left), w: Math.round(r.width) });
       setReady(true);
     };
 
@@ -101,122 +155,131 @@ export default function NavbarCs() {
     };
   }, [activeIndex]);
 
-  function closeMenu() {
-    setMenuOpen(false);
-  }
+  const isExpanded = phase === "expanding";
+  const isRoundedPanel = phase !== "closed";
 
   return (
-    <header className="relative z-50 w-full pt-4 px-3 sm:px-4">
-      <div className="mx-auto w-full max-w-[760px]">
-        <nav
-          aria-label="Primární navigace"
-          className={[
-            "relative z-50 flex items-center gap-2 sm:gap-3",
-            "py-2",
-            "bg-black/55 backdrop-blur-[12px]",
-            "border border-white/15 transition-[border-radius] duration-200",
-            "w-full md:w-fit md:mx-auto",
-            menuOpen ? "rounded-2xl rounded-b-none" : "rounded-full",
-          ].join(" ")}
-        >
-          {/* FLAG (left margin 8px) */}
-          <button
-            type="button"
-            onClick={() => router.push(toEn(normalizePath(pathname)))}
-            aria-label="Switch to English"
-            className="ml-3 h-10 w-10 rounded-full overflow-hidden bg-white/5 hover:bg-white/10 border border-white/15 hover:border-white/25 transition-colors cursor-pointer flex-shrink-0"
-          >
-            <Image
-              src="/private-images/english-flag.png"
-              alt=""
-              width={40}
-              height={40}
-              className="w-full h-full object-cover"
-              priority
-            />
-          </button>
+    <>
+      <div
+        className={[
+          "fixed inset-0 z-40",
+          "bg-black/60",
+          "transition-opacity duration-300 ease-out",
+          "[@media(min-width:456px)]:hidden",
+          open ? "opacity-100 pointer-events-auto" : "opacity-0 pointer-events-none",
+        ].join(" ")}
+        onClick={() => setOpenTwoPhase(false)}
+        aria-hidden
+      />
 
-          {/* DESKTOP LINKS */}
-          <div className="hidden md:flex min-w-0 px-1">
-            <div ref={linksRef} className="relative flex h-10 items-center gap-1">
+      <header className="sticky top-0 z-[999] w-full pt-4">
+        <div className="px-3 sm:px-6">
+          <div className="mx-auto w-full max-w-[1280px]">
+            <div className="mx-auto w-full max-w-[760px]">
               <div
-                aria-hidden
                 className={[
-                  "absolute left-0 top-0 h-10 rounded-full pointer-events-none",
-                  "bg-white/10 border border-white/20",
-                  ready
-                    ? "opacity-100 transition-[transform,width,opacity] duration-300 ease-out"
-                    : "opacity-0 transition-none",
+                  "relative z-[999] mx-auto",
+                  "w-full [@media(min-width:456px)]:w-[432px]",
+                  "bg-black/55 backdrop-blur-[12px]",
+                  "border border-white/15 overflow-hidden",
+                  "transition-[border-radius,max-height] ease-[cubic-bezier(0.16,1,0.3,1)]",
+                  "duration-[220ms]",
+                  "[@media(min-width:456px)]:rounded-[32px]",
+                  isRoundedPanel ? "rounded-2xl" : "rounded-[32px]",
+                  isExpanded ? "max-h-[520px] duration-[500ms]" : "max-h-[56px]",
+                  "[@media(min-width:456px)]:max-h-[56px]",
                 ].join(" ")}
-                style={{
-                  transform: `translateX(${slider.x}px)`,
-                  width: `${slider.w}px`,
-                }}
-              />
+              >
+                <nav className="flex items-center gap-2 sm:gap-3 h-[56px] pr-0 [@media(min-width:456px)]:pr-0">
+                  <button
+                    type="button"
+                    onClick={() => router.push(toEn(normalizePath(pathname)))}
+                    aria-label="Switch to English"
+                    className="ml-3 h-10 w-10 rounded-full overflow-hidden bg-white/5 hover:bg-white/10 border border-white/15 hover:border-white/25 transition-colors cursor-pointer flex-shrink-0"
+                  >
+                    <Image
+                      src="/private-images/english-flag.png"
+                      alt=""
+                      width={40}
+                      height={40}
+                      className="w-full h-full object-cover"
+                      priority
+                    />
+                  </button>
 
-              {items.map((it, i) => (
-                <Link
-                  key={it.href}
-                  href={it.href}
-                  ref={setLinkRef(i)}
-                  className="relative z-10 h-10 px-4 inline-flex items-center justify-center rounded-full whitespace-nowrap border border-transparent hover:bg-white/5 hover:border-white/15 transition-colors"
+                  <div className="hidden [@media(min-width:456px)]:flex min-w-0 px-0 flex-1">
+                    <div
+                      ref={linksRef}
+                      className="relative flex h-10 items-center gap-1 w-full justify-center"
+                    >
+                      <div
+                        aria-hidden
+                        className={[
+                          "absolute left-0 top-0 h-10 rounded-full pointer-events-none",
+                          "bg-white/10 border border-white/20",
+                          ready
+                            ? "opacity-100 transition-[transform,width,opacity] duration-300 ease-out"
+                            : "opacity-0 transition-none",
+                        ].join(" ")}
+                        style={{
+                          transform: `translateX(${slider.x}px)`,
+                          width: `${slider.w}px`,
+                        }}
+                      />
+
+                      {items.map((it, i) => (
+                        <Link
+                          key={it.href}
+                          href={it.href}
+                          ref={setLinkRef(i)}
+                          className="relative z-10 h-10 px-4 inline-flex items-center justify-center rounded-full whitespace-nowrap border border-transparent hover:bg-white/5 hover:border-white/15 transition-colors"
+                        >
+                          {it.label}
+                        </Link>
+                      ))}
+                    </div>
+                  </div>
+
+                  <div className="ml-auto mr-2 flex items-center [@media(min-width:456px)]:hidden">
+                    <Hamburger
+                      toggled={open}
+                      toggle={toggleMenu}
+                      direction="left"
+                      rounded
+                      size={20}
+                      duration={0.25}
+                      label="Menu"
+                    />
+                  </div>
+                </nav>
+
+                <div
+                  className={[
+                    "px-3 pb-3",
+                    "transition-[opacity,transform] duration-400 ease-[cubic-bezier(0.16,1,0.3,1)]",
+                    "[@media(min-width:456px)]:hidden",
+                    isExpanded ? "opacity-100 translate-y-0" : "opacity-0 -translate-y-2",
+                  ].join(" ")}
+                  style={{ pointerEvents: isExpanded ? "auto" : "none" }}
                 >
-                  {it.label}
-                </Link>
-              ))}
-            </div>
-          </div>
-
-          {/* HAMBURGER (mobile only) – right margin 8px */}
-          <div className="md:hidden ml-auto mr-2 flex items-center">
-            <Hamburger
-              toggled={menuOpen}
-              toggle={setMenuOpen}
-              direction="left"
-              rounded
-              size={20}
-              duration={0.25}
-              label="Menu"
-            />
-          </div>
-        </nav>
-
-        <div
-          className={[
-            "fixed inset-0 z-40 md:hidden",
-            "bg-black/60 backdrop-blur-sm",
-            "transition-opacity duration-200",
-            menuOpen ? "opacity-100 pointer-events-auto" : "opacity-0 pointer-events-none",
-          ].join(" ")}
-          onClick={closeMenu}
-          aria-hidden
-        />
-
-        <div
-          className={[
-            "relative z-50 md:hidden",
-            "transition-[opacity,transform,max-height] duration-250 ease-out",
-            menuOpen
-              ? "opacity-100 translate-y-0 max-h-[420px] pointer-events-auto"
-              : "opacity-0 -translate-y-2 max-h-0 pointer-events-none",
-          ].join(" ")}
-        >
-          <div className="border-x border-b border-white/15 bg-black/70 backdrop-blur-[12px] rounded-2xl rounded-t-none p-3 overflow-hidden">
-            <div className="grid gap-2">
-              {items.map((it) => (
-                <Link
-                  key={it.href}
-                  href={it.href}
-                  onClick={closeMenu}
-                  className="h-12 rounded-xl border border-white/10 inline-flex items-center justify-center whitespace-nowrap hover:bg-white/5 hover:border-white/15 transition-colors"
-                >
-                  {it.label}
-                </Link>
-              ))}
+                  <div className="grid gap-2 pt-2">
+                    {items.map((it) => (
+                      <Link
+                        key={it.href}
+                        href={it.href}
+                        onClick={() => setOpenTwoPhase(false)}
+                        className="h-12 rounded-xl border border-white/10 inline-flex items-center justify-center whitespace-nowrap hover:bg-white/5 hover:border-white/15 transition-colors"
+                      >
+                        {it.label}
+                      </Link>
+                    ))}
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
-      </div>
-    </header>
+      </header>
+    </>
   );
 }
