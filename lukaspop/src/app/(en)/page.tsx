@@ -2,6 +2,7 @@ import { poppins, geist } from "@/lib/fonts";
 
 export default function Home() {
   return (
+    <>
     <section className="relative h-screen w-full overflow-hidden">
       <div
         className="absolute inset-0 bg-[url('/private-images/hero-bg.jpg')] bg-cover bg-center"
@@ -44,5 +45,17 @@ export default function Home() {
         </div>
       </div>
     </section>
+    <section>
+      {Array.from({ length: 25 }).map((_, index) => (
+        <p key={index} className="text-text-secondary">
+          {index === 0 ? 'Secondary' : `${index + 1}${getSuffix(index + 1)} text`}
+        </p>
+      ))}
+    </section>
+    </>
   );
+  function getSuffix(n: number): string {
+  const suffixes = ['st', 'nd', 'rd'];
+  return suffixes[n % 10 - 1] || 'th';
+}
 }

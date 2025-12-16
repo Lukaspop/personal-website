@@ -158,12 +158,12 @@ export default function NavbarEn() {
 
   return (
     <>
-      {/* ✅ Backdrop exists ONLY when open */}
       {open && (
         <div
           className={[
             "fixed inset-0 z-40",
-            "bg-black/60",
+            "bg-black/55",
+            "backdrop-blur-[2px]",
             "transition-opacity duration-300 ease-out",
             "[@media(min-width:456px)]:hidden",
           ].join(" ")}
@@ -179,9 +179,14 @@ export default function NavbarEn() {
               <div
                 className={[
                   "relative z-[999] mx-auto",
-                  "w-full [@media(min-width:456px)]:w-[432px]",
-                  "bg-[#040404]/55 backdrop-blur-[12px]",
-                  "border border-white/15 overflow-hidden",
+                  "w-full [@media(min-width:456px)]:w-fit [@media(min-width:456px)]:max-w-[min(92vw,720px)]",
+
+                  // ✅ neutral glass (same as CS)
+                  "bg-white/[0.045] backdrop-blur-[20px]",
+                  "ring-1 ring-white/12",
+                  "shadow-[0_16px_52px_rgba(0,0,0,0.68)]",
+
+                  "overflow-hidden",
                   "transition-[border-radius,max-height] ease-[cubic-bezier(0.16,1,0.3,1)]",
                   "duration-[220ms]",
                   "[@media(min-width:456px)]:rounded-[32px]",
@@ -190,12 +195,38 @@ export default function NavbarEn() {
                   "[@media(min-width:456px)]:max-h-[56px]",
                 ].join(" ")}
               >
-                <nav className="flex items-center gap-2 sm:gap-3 h-[56px] pr-0 [@media(min-width:456px)]:pr-0">
+                {/* ✅ mostly neutral lighting */}
+                <div
+                  aria-hidden
+                  className="pointer-events-none absolute inset-0 opacity-100
+                             bg-[radial-gradient(950px_430px_at_18%_-12%,rgba(255,255,255,0.12),transparent_58%),radial-gradient(900px_420px_at_88%_122%,rgba(255,255,255,0.06),transparent_56%)]"
+                />
+                {/* tiny brand hint */}
+                <div
+                  aria-hidden
+                  className="pointer-events-none absolute inset-0 opacity-40
+                             bg-[radial-gradient(700px_300px_at_22%_0%,rgba(255,36,85,0.10),transparent_60%),radial-gradient(650px_280px_at_86%_120%,rgba(255,161,173,0.07),transparent_62%)]"
+                />
+                {/* sheen */}
+                <div
+                  aria-hidden
+                  className="pointer-events-none absolute inset-0
+                             bg-gradient-to-br from-white/10 via-white/0 to-white/0"
+                />
+
+                <nav className="relative flex items-center gap-2 sm:gap-3 h-[56px] pr-2 [@media(min-width:456px)]:pr-3">
                   <button
                     type="button"
                     onClick={() => router.push(toCs(normalizePath(pathname)))}
                     aria-label="Switch to Czech"
-                    className="ml-3 h-10 w-10 rounded-full overflow-hidden bg-white/5 hover:bg-white/10 border border-white/15 hover:border-white/25 transition-colors cursor-pointer flex-shrink-0"
+                    className={[
+                      "ml-3 h-10 w-10 rounded-full overflow-hidden flex-shrink-0",
+                      "cursor-pointer",
+                      "bg-white/[0.06] hover:bg-white/[0.09]",
+                      "ring-1 ring-white/12 hover:ring-white/18",
+                      "shadow-[0_10px_26px_rgba(0,0,0,0.45)]",
+                      "transition-all duration-200",
+                    ].join(" ")}
                   >
                     <Image
                       src="/private-images/czech-flag.png"
@@ -210,13 +241,20 @@ export default function NavbarEn() {
                   <div className="hidden [@media(min-width:456px)]:flex min-w-0 px-0 flex-1">
                     <div
                       ref={linksRef}
-                      className="relative flex h-10 items-center gap-1 w-full justify-center"
+                      className="relative flex h-10 items-center gap-1 lg:gap-2 w-full justify-center"
                     >
+                      {/* ✅ active pill: NO border, neutral glass, tiny brand hint */}
                       <div
                         aria-hidden
                         className={[
                           "absolute left-0 top-0 h-10 rounded-full pointer-events-none",
-                          "bg-white/10 border border-white/20",
+                          "backdrop-blur-xl",
+                          "bg-white/[0.08]",
+                          "shadow-[0_12px_30px_rgba(0,0,0,0.42)]",
+                          "after:pointer-events-none after:absolute after:inset-0 after:rounded-full",
+                          "after:bg-[linear-gradient(180deg,rgba(255,255,255,0.16),rgba(255,255,255,0.02))]",
+                          "before:pointer-events-none before:absolute before:inset-0 before:rounded-full before:opacity-60",
+                          "before:bg-[linear-gradient(90deg,rgba(255,36,85,0.06),transparent_45%,rgba(255,161,173,0.05))]",
                           ready
                             ? "opacity-100 transition-[transform,width,opacity] duration-300 ease-out"
                             : "opacity-0 transition-none",
@@ -232,9 +270,25 @@ export default function NavbarEn() {
                           key={it.href}
                           href={it.href}
                           ref={setLinkRef(i)}
-                          className="relative z-10 h-10 px-4 inline-flex items-center justify-center rounded-full whitespace-nowrap border border-transparent hover:bg-white/5 hover:border-white/15 transition-colors"
+                          className={[
+                            "group relative z-10 h-10 inline-flex items-center justify-center rounded-full whitespace-nowrap",
+                            "border-none",
+                            "text-sm lg:text-base 2xl:text-lg",
+                            "px-4 lg:px-5 2xl:px-6",
+                            "leading-none",
+                            "text-[var(--text-primary)]/90",
+                            "transition-all duration-200",
+                            "hover:bg-white/[0.045]",
+                            "hover:shadow-[0_10px_26px_rgba(0,0,0,0.30)]",
+                          ].join(" ")}
                         >
-                          {it.label}
+                          <span
+                            aria-hidden
+                            className="pointer-events-none absolute inset-0 rounded-full opacity-0
+                                       group-hover:opacity-100 transition-opacity duration-200
+                                       bg-[linear-gradient(90deg,rgba(255,36,85,0.04),rgba(255,255,255,0.06),rgba(255,161,173,0.03))]"
+                          />
+                          <span className="relative">{it.label}</span>
                         </Link>
                       ))}
                     </div>
@@ -255,7 +309,7 @@ export default function NavbarEn() {
 
                 <div
                   className={[
-                    "px-3 pb-3",
+                    "relative px-3 pb-3",
                     "transition-[opacity,transform] duration-400 ease-[cubic-bezier(0.16,1,0.3,1)]",
                     "[@media(min-width:456px)]:hidden",
                     isExpanded ? "opacity-100 translate-y-0" : "opacity-0 -translate-y-2",
@@ -268,9 +322,23 @@ export default function NavbarEn() {
                         key={it.href}
                         href={it.href}
                         onClick={() => setOpenTwoPhase(false)}
-                        className="h-12 rounded-xl border border-white/10 inline-flex items-center justify-center whitespace-nowrap hover:bg-white/5 hover:border-white/15 transition-colors"
+                        className={[
+                          "group relative h-12 rounded-xl",
+                          "ring-1 ring-white/12 hover:ring-white/16",
+                          "bg-white/[0.03] hover:bg-white/[0.05]",
+                          "shadow-[0_12px_30px_rgba(0,0,0,0.46)]",
+                          "inline-flex items-center justify-center whitespace-nowrap",
+                          "transition-all duration-200",
+                          "text-[var(--text-primary)]/90",
+                        ].join(" ")}
                       >
-                        {it.label}
+                        <span
+                          aria-hidden
+                          className="pointer-events-none absolute inset-0 rounded-xl opacity-0
+                                     group-hover:opacity-100 transition-opacity duration-200
+                                     bg-[linear-gradient(90deg,rgba(255,36,85,0.035),rgba(255,255,255,0.06),rgba(255,161,173,0.03))]"
+                        />
+                        <span className="relative">{it.label}</span>
                       </Link>
                     ))}
                   </div>
