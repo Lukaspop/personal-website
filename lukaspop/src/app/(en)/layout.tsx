@@ -1,7 +1,5 @@
 import "../styles/globals.css";
 import NavbarEn from "@/components/en/Navbar";
-import { PageWrapper } from "@/components/Pagewrapper";
-
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en">
@@ -12,7 +10,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           </div>
         </div>
         <main>
-          <PageWrapper className="pt-24 sm:pt-28">{children}</PageWrapper>
+          {children}
         </main>
       </body>
     </html>

@@ -13,7 +13,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         </div>
 
         <main>
-          <PageWrapper className="pt-24 sm:pt-28">{children}</PageWrapper>
+          {children}
         </main>
       </body>
     </html>

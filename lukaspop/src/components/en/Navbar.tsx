@@ -53,7 +53,7 @@ export default function NavbarEn() {
   const items = useMemo(
     () => [
       { href: "/", label: "Home" },
-      { href: "/about-me", label: "About" },
+      { href: "/about-me", label: "About " },
       { href: "/projects", label: "Projects" },
       { href: "/contact", label: "Contact" },
     ],
@@ -75,9 +75,7 @@ export default function NavbarEn() {
     const currentOpen = openRef.current;
     const currentPhase = phaseRef.current;
 
-    if (!next && !currentOpen && currentPhase === "closed") {
-      return;
-    }
+    if (!next && !currentOpen && currentPhase === "closed") return;
 
     if (next) {
       setOpen(true);
@@ -160,26 +158,29 @@ export default function NavbarEn() {
 
   return (
     <>
-      <div
-        className={[
-          "fixed inset-0 z-40",
-          "bg-black/60",
-          "transition-opacity duration-300 ease-out",
-          "[@media(min-width:456px)]:hidden",
-          open ? "opacity-100 pointer-events-auto" : "opacity-0 pointer-events-none",
-        ].join(" ")}
-        onClick={() => setOpenTwoPhase(false)}
-        aria-hidden
-      />
+      {/* ✅ Backdrop exists ONLY when open */}
+      {open && (
+        <div
+          className={[
+            "fixed inset-0 z-40",
+            "bg-black/60",
+            "transition-opacity duration-300 ease-out",
+            "[@media(min-width:456px)]:hidden",
+          ].join(" ")}
+          onClick={() => setOpenTwoPhase(false)}
+          aria-hidden
+        />
+      )}
+
       <header className="sticky top-0 z-[999] w-full pt-4">
         <div className="px-3 sm:px-6">
           <div className="mx-auto w-full max-w-[1280px]">
             <div className="mx-auto w-full max-w-[760px]">
               <div
                 className={[
-                  "relative z-[999] mx-auto", 
+                  "relative z-[999] mx-auto",
                   "w-full [@media(min-width:456px)]:w-[432px]",
-                  "bg-black/55 backdrop-blur-[12px]",
+                  "bg-[#040404]/55 backdrop-blur-[12px]",
                   "border border-white/15 overflow-hidden",
                   "transition-[border-radius,max-height] ease-[cubic-bezier(0.16,1,0.3,1)]",
                   "duration-[220ms]",

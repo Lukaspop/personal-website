@@ -1,5 +1,4 @@
 @import "tailwindcss";
-@import "tailwindcss";
 
 /* Design tokens */
 :root {
@@ -24,4 +23,9 @@ body {
   background: var(--bg);
   color: var(--text-primary);
   font-family: var(--font-geist-sans);
+}
+@layer theme {
+  :root, :host {
+    --color-black: initial;
+  }
 }
