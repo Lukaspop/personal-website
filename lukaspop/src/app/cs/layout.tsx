@@ -1,6 +1,15 @@
 import "../styles/globals.css";
 import NavbarCs from "@/components/cs/Navbar";
 import { PageWrapper } from "@/components/Pagewrapper";
+import type { Metadata } from "next";
+
+const noIndex = process.env.NEXT_PUBLIC_NO_INDEX === "true";
+
+export const metadata: Metadata = {
+  robots: noIndex
+    ? { index: false, follow: false }
+    : { index: true, follow: true },
+};
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (

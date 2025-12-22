@@ -1,5 +1,14 @@
 import "../styles/globals.css";
 import NavbarEn from "@/components/en/Navbar";
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  robots: {
+    index: false,
+    follow: false,
+  },
+};
+
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en">
@@ -9,9 +18,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
             <NavbarEn />
           </div>
         </div>
-        <main>
-          {children}
-        </main>
+        <main>{children}</main>
       </body>
     </html>
   );
