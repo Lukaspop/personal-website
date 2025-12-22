@@ -1,8 +1,8 @@
-export default function SheepMonopoly() {
+export default function Projekty() {
   return (
     <div>
     
-      <h1>SheepMonopoly – czech</h1>
+      <h1>Projekty – czech</h1>
     
     </div>
   );
