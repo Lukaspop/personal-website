@@ -155,7 +155,6 @@ export default function NavbarEn() {
 
   const isExpanded = phase === "expanding";
   const isRoundedPanel = phase !== "closed";
-
   return (
     <>
       {open && (
@@ -171,7 +170,6 @@ export default function NavbarEn() {
           aria-hidden
         />
       )}
-
       <header className="sticky top-0 z-[999] w-full pt-4">
         <div className="px-3 sm:px-6">
           <div className="mx-auto w-full max-w-[1280px]">
@@ -180,12 +178,9 @@ export default function NavbarEn() {
                 className={[
                   "relative z-[999] mx-auto",
                   "w-full [@media(min-width:456px)]:w-fit [@media(min-width:456px)]:max-w-[min(92vw,720px)]",
-
-                  // ✅ neutral glass (same as CS)
                   "bg-white/[0.045] backdrop-blur-[20px]",
                   "ring-1 ring-white/12",
                   "shadow-[0_16px_52px_rgba(0,0,0,0.68)]",
-
                   "overflow-hidden",
                   "transition-[border-radius,max-height] ease-[cubic-bezier(0.16,1,0.3,1)]",
                   "duration-[220ms]",
@@ -195,19 +190,16 @@ export default function NavbarEn() {
                   "[@media(min-width:456px)]:max-h-[56px]",
                 ].join(" ")}
               >
-                {/* ✅ mostly neutral lighting */}
                 <div
                   aria-hidden
                   className="pointer-events-none absolute inset-0 opacity-100
                              bg-[radial-gradient(950px_430px_at_18%_-12%,rgba(255,255,255,0.12),transparent_58%),radial-gradient(900px_420px_at_88%_122%,rgba(255,255,255,0.06),transparent_56%)]"
                 />
-                {/* tiny brand hint */}
                 <div
                   aria-hidden
                   className="pointer-events-none absolute inset-0 opacity-40
                              bg-[radial-gradient(700px_300px_at_22%_0%,rgba(255,36,85,0.10),transparent_60%),radial-gradient(650px_280px_at_86%_120%,rgba(255,161,173,0.07),transparent_62%)]"
                 />
-                {/* sheen */}
                 <div
                   aria-hidden
                   className="pointer-events-none absolute inset-0
@@ -237,13 +229,11 @@ export default function NavbarEn() {
                       priority
                     />
                   </button>
-
                   <div className="hidden [@media(min-width:456px)]:flex min-w-0 px-0 flex-1">
                     <div
                       ref={linksRef}
                       className="relative flex h-10 items-center gap-1 lg:gap-2 w-full justify-center"
                     >
-                      {/* ✅ active pill: NO border, neutral glass, tiny brand hint */}
                       <div
                         aria-hidden
                         className={[
@@ -280,6 +270,7 @@ export default function NavbarEn() {
                             "transition-all duration-200",
                             "hover:bg-white/[0.045]",
                             "hover:shadow-[0_10px_26px_rgba(0,0,0,0.30)]",
+                            "select-none"
                           ].join(" ")}
                         >
                           <span
