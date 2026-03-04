@@ -29,3 +29,55 @@ body {
     --color-black: initial;
   }
 }
+
+@import "tailwindcss";
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-white text-neutral-900 antialiased;
+  }
+
+  h1 {
+    @apply text-2xl sm:text-3xl lg:text-4xl font-bold tracking-tight;
+  }
+
+  h2 {
+    @apply text-2xl sm:text-3xl lg:text-4xl font-semibold tracking-tight;
+  }
+
+  h3 {
+    @apply text-xl sm:text-2xl font-semibold;
+  }
+
+  h4 {
+    @apply text-lg font-medium;
+  }
+
+  p {
+    @apply text-base leading-relaxed text-neutral-600;
+  }
+
+  small {
+    @apply text-sm text-neutral-500;
+  }
+}
+@layer utilities {
+  @keyframes navbar-enter {
+    0% {
+      opacity: 0;
+      transform: translateY(-20px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .animate-navbar {
+    animation: navbar-enter 600ms cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  }
+}

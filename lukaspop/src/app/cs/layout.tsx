@@ -1,29 +1,27 @@
 import "../styles/globals.css";
-import NavbarCs from "@/components/cs/Navbar";
-import { PageWrapper } from "@/components/Pagewrapper";
+import Navbar from "@/components/Navbar";
 import type { Metadata } from "next";
 
-const noIndex = process.env.NEXT_PUBLIC_NO_INDEX === "true";
-
 export const metadata: Metadata = {
-  robots: noIndex
-    ? { index: false, follow: false }
-    : { index: true, follow: true },
+  robots: {
+    index: true,
+    follow: true,
+  },
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="cs">
-      <body className="bg-[#040404] text-[#FAFAFA] overflow-x-hidden">
-        <div className="fixed top-0 left-0 right-0 z-[999] pointer-events-none">
-          <div className="pointer-events-auto">
-            <NavbarCs />
+      <body className="bg-black text-white antialiased">
+        <div className="relative min-h-dvh">
+          <div className="pointer-events-none absolute inset-0 -z-10">
+            <div className="absolute inset-0 bg-gradient-to-br from-blue-600/30 via-purple-600/20 to-emerald-600/30 opacity-40 blur-3xl" />
           </div>
+          <header className="fixed inset-x-0 top-0 z-50 h-16">
+            <Navbar />
+          </header>
+          <main>{children}</main>
         </div>
-
-        <main>
-          {children}
-        </main>
       </body>
     </html>
   );
