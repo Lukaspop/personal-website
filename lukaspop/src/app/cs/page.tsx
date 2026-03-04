@@ -15,12 +15,8 @@ export default function Home() {
   return (
     <main>
       <section className="relative flex min-h-dvh items-center justify-center overflow-hidden">
-        {/* Vanta background */}
         <WaveEffects />
-
-        {/* Ultra smooth gradient overlay */}
         <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent via-70% to-[#020202]" />
-        {/* Content */}
         <div className="relative z-10 px-6 text-center">
           <h1
             className={`${poppins.className} text-[clamp(4rem,8vw,6rem)] leading-tight font-bold tracking-[-0.024em] text-[#FAFAFA]`}
@@ -34,31 +30,33 @@ export default function Home() {
           </p>
         </div>
       </section>
-      <section></section>
-      <section id="sluzby" className="bg-[#020202] py-24">
-        <div className="mx-auto max-w-7xl px-6">
-          <header className="mb-6 max-w-2xl">
-            <h2 className="mb-4 text-3xl font-bold text-white md:text-4xl">Služby</h2>
-            <p className="text-neutral-400">
-              Moderní webová řešení zaměřená na výkon a dlouhodobou udržitelnost.
-            </p>
-          </header>
 
-          <div className="grid gap-4 md:grid-cols-3">
+      <section id="who-am-i" className="bg-[#020202] py-24">
+        <div className="mx-auto max-w-7xl px-6">
+          <h2 className="text-primary font-bold">Kdo jsem?</h2>
+        </div>
+      </section>
+
+      <section id="services" className="bg-[#020202] py-24">
+        <div className="mx-auto max-w-7xl px-6">
+          <header className="mb-12 max-w-2xl">
+            <h2 className="text-primary text-3xl font-bold md:text-4xl">Services</h2>
+          </header>
+          <div className="grid gap-3 md:grid-cols-3">
             <ServiceCard
               title="Web Development"
               description="Moderní webové aplikace postavené na Next.js a TypeScriptu."
-              icon={<Code size={24} />}
+              icon={<Code size={20} color="var(--neon-blue)" />}
             />
             <ServiceCard
               title="UI / UX"
               description="Promyšlený design zaměřený na uživatelský zážitek."
-              icon={<Palette size={24} />}
+              icon={<Palette size={20} color="var(--neon-red)" />}
             />
             <ServiceCard
               title="Performance"
               description="Optimalizace rychlosti a škálovatelnosti."
-              icon={<Zap size={24} />}
+              icon={<Zap size={20} color="var(--neon-yellow)" />}
             />
           </div>
         </div>
@@ -66,25 +64,6 @@ export default function Home() {
 
       <section id="projekty" className="bg-[#020202] py-24">
         <div className="mx-auto max-w-7xl px-6"></div>
-      </section>
-
-      {/* CTA */}
-      <section id="kontakt" className="bg-[#020202] py-32">
-        <div className="mx-auto max-w-4xl px-6 text-center">
-          <h2 className="text-3xl font-semibold text-white md:text-4xl">Máte projekt?</h2>
-
-          <p className="mt-6 text-lg text-neutral-400">
-            Pojďme si o něm promluvit a vytvořit řešení které bude fungovat.
-          </p>
-          <div className="mt-10">
-            <a
-              href="#"
-              className="inline-flex items-center rounded-lg bg-[#FF2455] px-8 py-4 font-medium text-white transition-transform duration-300 hover:scale-105"
-            >
-              Nezávazná konzultace
-            </a>
-          </div>
-        </div>
       </section>
     </main>
   );
