@@ -63,7 +63,25 @@ export default function Home() {
       </section>
 
       <section id="projekty" className="bg-[#020202] py-24">
-        <div className="mx-auto max-w-7xl px-6"></div>
+        <div className="mx-auto max-w-7xl px-6">
+          <h2>Projects</h2>
+          <ProjectCard
+            title="První projekt"
+            description="tohle je fakt cool kamo"
+            imagePath="/private-images/hero-bg.jpg"
+            align="left"
+            year="2025"
+            visitLink="/projects"
+          />
+          <ProjectCard
+            title="První projekt"
+            description="tohle je fakt cool kamo"
+            imagePath="/private-images/hero-bg.jpg"
+            align="right"
+            year="2025"
+            visitLink="/projects"
+          />
+        </div>
       </section>
     </main>
   );
