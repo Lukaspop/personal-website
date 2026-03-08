@@ -30,7 +30,6 @@ export default function Navbar() {
         { href: "/cs", label: "Domů" },
         { href: "/cs/o-mne", label: "O mně" },
         { href: "/cs/projekty", label: "Projekty" },
-        { href: "/cs/kontakt", label: "Kontakt" },
       ];
     }
 
@@ -38,43 +37,58 @@ export default function Navbar() {
       { href: "/", label: "Home" },
       { href: "/about-me", label: "About" },
       { href: "/projects", label: "Projects" },
-      { href: "/contact", label: "Contact" },
     ];
   }, [locale]);
 
   const switchLanguage = () => {
     const target = locale === "cs" ? toEn(pathname) : toCs(pathname);
-
     router.push(target);
   };
+
+  const isActive = (href: string) => {
+    if (href === "/" || href === "/cs") {
+      return pathname === href;
+    }
+    return pathname === href || pathname.startsWith(href + "/");
+  };
+
+  const contactLabel = locale === "cs" ? "Kontakt" : "Contact";
 
   return (
     <header className="animate-navbar fixed top-0 left-0 z-[999] w-full border-b border-white/10 bg-black/60 backdrop-blur-xl">
       <div className="mx-auto flex h-16 max-w-7xl items-center justify-between px-6">
-        <Link href={locale === "cs" ? "/cs" : "/"} className="text-lg font-semibold text-white">
-          Lukaspop<span className="text-[#FF2455]">+</span>
+        <Link
+          href={locale === "cs" ? "/cs" : "/"}
+          className="cursor-pointer [font-family:var(--font-poppins)] text-xl font-semibold tracking-[0.016em] text-white"
+        >
+          Lukaspop
+          <span className="text-[#FF2455] drop-shadow-[0_0_30px_rgba(255,36,85,0.6)]">+</span>
         </Link>
 
         <nav className="hidden items-center gap-8 text-sm md:flex">
-          {items.map((item) => {
-            const isActive = pathname === item.href || pathname.startsWith(item.href + "/");
+          {items.map((item) => (
+            <Link
+              key={item.href}
+              href={item.href}
+              className={`ml-2 flex h-7 cursor-pointer items-center transition-colors duration-200 ${
+                isActive(item.href) ? "text-white" : "text-white/60 hover:text-white"
+              }`}
+            >
+              {item.label}
+            </Link>
+          ))}
 
-            return (
-              <Link
-                key={item.href}
-                href={item.href}
-                className={`transition-colors duration-200 ${
-                  isActive ? "text-white" : "text-white/60 hover:text-white"
-                }`}
-              >
-                {item.label}
-              </Link>
-            );
-          })}
+          {/* CONTACT BUTTON */}
+          <a
+            href="#footer"
+            className="flex h-7 items-center justify-center rounded-full border border-white/15 px-3 text-sm text-white/70 transition-all duration-300 hover:border-white/40 hover:text-white"
+          >
+            {contactLabel}
+          </a>
 
           <button
             onClick={switchLanguage}
-            className="ml-4 h-9 w-9 overflow-hidden rounded-full ring-1 ring-white/20 transition hover:ring-white/40"
+            className="h-9 w-9 cursor-pointer overflow-hidden rounded-full ring-1 ring-white/20 transition hover:ring-white/40"
           >
             <Image
               src={
@@ -90,7 +104,7 @@ export default function Navbar() {
           </button>
         </nav>
 
-        <div className="md:hidden">
+        <div className="cursor-pointer md:hidden">
           <Hamburger toggled={open} toggle={setOpen} size={20} />
         </div>
       </div>
@@ -106,18 +120,28 @@ export default function Navbar() {
               key={item.href}
               href={item.href}
               onClick={() => setOpen(false)}
-              className="block text-white/80 transition hover:text-white"
+              className={`block cursor-pointer transition ${
+                isActive(item.href) ? "text-white" : "text-white/80 hover:text-white"
+              }`}
             >
               {item.label}
             </Link>
           ))}
+
+          <a
+            href="#footer"
+            onClick={() => setOpen(false)}
+            className="block cursor-pointer text-white/80 hover:text-white"
+          >
+            {contactLabel}
+          </a>
 
           <button
             onClick={() => {
               setOpen(false);
               switchLanguage();
             }}
-            className="flex items-center gap-3 pt-4"
+            className="flex cursor-pointer items-center gap-3 pt-4"
           >
             <Image
               src={

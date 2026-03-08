@@ -19,7 +19,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
 }) => {
   return (
     <section
-      className={`grid items-center gap-12 py-20 lg:grid-cols-2 ${
+      className={`grid items-center gap-12 pt-12 lg:grid-cols-2 ${
         align === "right" ? "lg:[&>*:first-child]:order-2" : ""
       }`}
     >
@@ -27,7 +27,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
       <div className="max-w-xl">
         <p className="mb-2 text-sm text-gray-400">{year}</p>
 
-        <h2 className="mb-4 text-3xl font-semibold">{title}</h2>
+        <h3 className="mb-4 text-3xl font-semibold">{title}</h3>
 
         <p className="mb-6 text-lg text-gray-300">{description}</p>
 
