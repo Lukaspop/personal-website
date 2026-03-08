@@ -2,8 +2,7 @@ name: Build & Deploy Next.js App with Docker Compose
 
 on:
   push:
-    branches:
-      - master
+    branches: [master]
 
 jobs:
   build-and-deploy:
@@ -21,10 +20,8 @@ jobs:
         with:
           username: ${{ secrets.DOCKERHUB_USER }}
           password: ${{ secrets.DOCKERHUB_TOKEN }}
-
       - name: Print all files in tree
         run: find .
-
       - name: Sestavení a nahrání kontejnerového obrazu
         uses: docker/build-push-action@v6
         with:
@@ -45,4 +42,4 @@ jobs:
           script: |
             cd /home/pop/personal-website/lukaspop
             docker compose -f docker-compose.deploy.yml pull
-            docker compose -f docker-compose.deploy.yml up -d --remove-orphans
+            docker compose -f docker-compose.deploy.yml up -d
