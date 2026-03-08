@@ -4,6 +4,7 @@ export default function Kontakt() {
       <h1>Kontakt – czech</h1>
       <p>123</p>
       <p>123</p>
+      <p>123</p>
     </div>
   );
 }
