@@ -3,6 +3,7 @@ export default function Kontakt() {
     <div>
       <h1>Kontakt – czech</h1>
       <p>miluju gympl</p>
+      <p>miluju gympl</p>
     </div>
   );
 }
