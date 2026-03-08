@@ -5,6 +5,7 @@ export default function Kontakt() {
       <p>123</p>
       <p>123</p>
       <p>123</p>
+      <p>123</p>
     </div>
   );
 }
