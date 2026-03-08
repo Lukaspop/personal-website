@@ -8,6 +8,7 @@ export default function Kontakt() {
       <p>123</p>
       <p>123</p>
       <p>123</p>
+      <p>Ras dva tri</p>
     </div>
   );
 }
