@@ -2,7 +2,7 @@ name: Build & Deploy Next.js App with Docker Compose
 
 on:
   push:
-    branches: [master]
+    branches: [main]
 
 jobs:
   build-and-deploy:
