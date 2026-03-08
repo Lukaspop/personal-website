@@ -2,14 +2,14 @@ FROM node:22
 
 WORKDIR /app
 
-COPY package*.json ./
+COPY lukaspop/package*.json ./
 
 RUN npm install --legacy-peer-deps
 
-COPY . .
+COPY lukaspop/ .
 
 RUN npm run build
 
 EXPOSE 3000
 
-CMD ["npm", "run"]
+CMD ["npm", "start"]
