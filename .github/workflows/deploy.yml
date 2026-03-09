@@ -1,4 +1,4 @@
-name: Build & Deploy Next.js App
+name: Deploy Next.js App
 
 on:
   push:
@@ -12,9 +12,6 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
 
-      - name: Set up Docker Buildx
-        uses: docker/setup-buildx-action@v3
-
       - name: Build Docker image
         uses: docker/build-push-action@v6
         with:
@@ -22,8 +19,6 @@ jobs:
           file: ./lukaspop/Dockerfile
           push: false
           tags: lukaspop:latest
-          cache-from: type=gha
-          cache-to: type=gha,mode=max
 
       - name: Deploy to VPS
         uses: appleboy/ssh-action@v1.0.0
@@ -32,6 +27,7 @@ jobs:
           username: ${{ secrets.SSH_USER }}
           key: ${{ secrets.SSH_PRIVATE_KEY }}
           script: |
+            git config --global --add safe.directory /home/pop/personal-website
             cd /home/pop/personal-website
             git pull
             cd lukaspop
