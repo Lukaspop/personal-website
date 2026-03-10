@@ -33,7 +33,7 @@ export default function Home() {
 
       <section id="who-am-i" className="bg-[#020202] py-24">
         <div className="mx-auto max-w-7xl px-6">
-          <h2 className="text-primary font-bold">Kdo jsem?</h2>
+          <h2 className="text-primary font-bold">Kostláne děkuji ti jseš frajer!</h2>
         </div>
       </section>
 
