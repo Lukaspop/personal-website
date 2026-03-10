@@ -9,8 +9,6 @@ COPY . .
 
 RUN npm run build
 
-COPY .next/standalone ./
-
 EXPOSE 3000
 
 CMD ["node", "server.js"]
