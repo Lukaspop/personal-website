@@ -33,7 +33,7 @@ export default function Home() {
 
       <section id="who-am-i" className="bg-[#020202] py-24">
         <div className="mx-auto max-w-7xl px-6">
-          <h2 className="text-primary font-bold">Hello world github actions work</h2>
+          <h2 className="text-primary font-bold">Kostlan je frajer!</h2>
         </div>
       </section>
 
