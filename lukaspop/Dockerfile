@@ -10,6 +10,6 @@ COPY . .
 
 RUN npm run build
 
-EXPOSE 3000
+EXPOSE 6767
 
 CMD ["node", ".next/standalone/server.js"]
