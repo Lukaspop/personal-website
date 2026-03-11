@@ -80,32 +80,34 @@ export default function Home() {
           <h2 className="text-primary pb-12 text-3xl font-bold md:text-4xl">Výběr z projektů</h2>
           <ProjectCard
             title="Osobní stránka"
-            description="Tento projekt je mým nejnovějším dílem, které má pro mě obrovskou hodnotu. Nejtěžším krokem zde byl samotný návrh stránky, ke kterému jsem se dostal až po několika pokusech."
+            description="Tento projekt je mým nejnovějším dílem a má pro mě velkou osobní hodnotu. Největší výzvou byl samotný návrh stránky, ke kterému jsem se dostal až po několika iteracích a hledání správného směru."
             imagePath="/private-images/personalWebsiteProject.jpg"
-            imageAlt="123"
+            imageAlt="Screenshot osobní webové stránky Lukaspop"
             align="left"
             year="2026"
-            skills={["Figma", "Next.js", "Tailwind", "UI Design"]}
+            skills={["Figma", "Next.js", "Tailwind", "SEO"]}
             visitLink="/cs"
           />
+
           <ProjectCard
             title="Cutouts"
-            description="Webová stránka pro kapelu Cutouts byl velmi zajímavý projekt, při kterém jsem mohl s velkou volností zapojit svou kreativitu. Kapela mi poskytla pouze logo, jejich Instagram a nahrávku živého vystoupení. Na základě těchto materiálů vzniklo několik návrhů ve Figmě, ze kterých jsme postupně dospěli k finální podobě stránky. Background, který jsem pro projekt vytvořil, by měl v budoucnu sloužit také jako motiv pro merch kapely, což je pro mě velikým úspěchem"
+            description="Webová stránka pro irskou kapelu Cutouts vznikla na základě jejich loga, Instagramu a nahrávky živého vystoupení. Z těchto podkladů jsem vytvořil několik návrhů ve Figmě, ze kterých postupně vznikla finální podoba webu. Artwork vytvořený pro stránku by se v budoucnu mohl objevit i na jejich merch."
             imagePath="/private-images/cutoutsWebsiteProject.jpg"
-            imageAlt="123"
+            imageAlt="Screenshot webové stránky kapely Cutouts"
             align="right"
             year="2025"
-            skills={["Figma", "Next.js", "Tailwind", "UI Design"]}
+            skills={["Figma", "WordPress", "MailerLite"]}
             visitLink="https://cutouts.ie"
           />
+
           <ProjectCard
-            title="Pixel dread"
-            description="takovej overkill na backend, že to ani není možný ale dobře, spoiler, mám v plánu dělat redesign celého vzhledu, protože ten kod co tam spojuje backend a frontend je nadherný, ale vizuál to celé zabijí"
+            title="Pixel Dread"
+            description="Na tomto projektu jsem se poprvé setkal se SEO. Jde o web k mobilní aplikaci Pixel Dread od Jana S. Kostlána. Backend projektu je velmi kvalitní, zejména systém instancí pro komunikaci, ale vizuální stránka webu podle mě neodpovídá jeho technické úrovni. Proto připravuji redesign webu a úpravu některých SEO prvků. Projekt je také součástí mé maturitní práce."
             imagePath="/private-images/pixeldreadWebsiteProject.jpg"
-            imageAlt="123"
+            imageAlt="Screenshot webové stránky Pixel Dread"
             align="left"
             year="2025"
-            skills={["React", "ASP.NET", "SQL", "Google analytics"]}
+            skills={["ASP.NET", "React", "SQL", "SEO", "Google Analytics"]}
             visitLink="https://pixeldread.com"
           />
         </div>
