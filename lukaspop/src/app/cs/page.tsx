@@ -13,7 +13,7 @@ const poppins = Poppins({
 
 export default function Home() {
   return (
-    <main>
+    <main className="relative overflow-hidden">
       <section className="relative flex min-h-dvh items-center justify-center overflow-hidden">
         <WaveEffects />
         <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent via-70% to-[#020202]" />
@@ -30,7 +30,6 @@ export default function Home() {
           </p>
         </div>
       </section>
-
       <section id="who-am-i" className="bg-[#020202] py-12">
         <div className="mx-auto max-w-7xl px-6">
           <h2 className="text-primary font-bold">Kdo jsem?</h2>
@@ -49,7 +48,6 @@ export default function Home() {
           </p>
         </div>
       </section>
-
       <section id="services" className="bg-[#020202] py-12">
         <div className="mx-auto max-w-7xl px-6">
           <header className="mb-12 max-w-2xl">
@@ -74,7 +72,6 @@ export default function Home() {
           </div>
         </div>
       </section>
-
       <section id="projekty" className="bg-[#020202] pt-12">
         <div className="mx-auto max-w-7xl px-6">
           <h2 className="text-primary pb-12 text-3xl font-bold md:text-4xl">Výběr z projektů</h2>
