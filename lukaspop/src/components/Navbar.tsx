@@ -59,7 +59,7 @@ export default function Navbar() {
       <div className="mx-auto flex h-16 max-w-7xl items-center justify-between px-6">
         <Link
           href={locale === "cs" ? "/cs" : "/"}
-          className="cursor-pointer [font-family:var(--font-poppins)] text-xl font-semibold tracking-[0.016em] text-white"
+          className="cursor-pointer [font-family:var(--font-poppins)] text-xl font-semibold tracking-[0.008em] text-white"
         >
           Lukaspop
           <span className="text-[#FF2455] drop-shadow-[0_0_30px_rgba(255,36,85,0.6)]">+</span>

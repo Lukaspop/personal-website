@@ -39,10 +39,17 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
         </a>
       </div>
 
-      {/* IMAGE */}
       <div className="flex justify-center">
-        <div className="relative w-full max-w-[700px] rounded-2xl border border-white/10 bg-black p-2 shadow-xl">
-          <img src={imagePath} alt={title} className="w-full rounded-xl object-contain" />
+        <div className="w-full max-w-[700px] overflow-hidden rounded-2xl border border-white/10 bg-[#0A0A0A] shadow-xl">
+          {/* window top bar */}
+          <div className="flex items-center gap-2 border-b border-white/10 px-4 py-2">
+            <span className="h-3 w-3 rounded-full bg-red-500"></span>
+            <span className="h-3 w-3 rounded-full bg-yellow-400"></span>
+            <span className="h-3 w-3 rounded-full bg-green-500"></span>
+          </div>
+
+          {/* image */}
+          <img src={imagePath} alt={title} className="w-full object-cover" />
         </div>
       </div>
     </section>

@@ -31,13 +31,18 @@ export default function Home() {
         </div>
       </section>
 
-      <section id="who-am-i" className="bg-[#020202] py-24">
+      <section id="who-am-i" className="bg-[#020202] py-12">
         <div className="mx-auto max-w-7xl px-6">
-          <h2 className="text-primary font-bold">Kostlan je frajer!</h2>
+          <h2 className="text-primary font-bold">Kdo jsem?</h2>
+          <p className="mt-6 max-w-4xl leading-relaxed text-neutral-400">
+            Jmenuji se Lukáš Pop a věnuji se vývoji moderních webových aplikací. Zaměřuji se na
+            kombinaci promyšleného designu, kvalitního kódu a řešení, která jsou přehledná a snadno
+            rozšiřitelná i do budoucna.
+          </p>
         </div>
       </section>
 
-      <section id="services" className="bg-[#020202] py-24">
+      <section id="services" className="bg-[#020202] py-12">
         <div className="mx-auto max-w-7xl px-6">
           <header className="mb-12 max-w-2xl">
             <h2 className="text-primary text-3xl font-bold md:text-4xl">Services</h2>
@@ -62,22 +67,30 @@ export default function Home() {
         </div>
       </section>
 
-      <section id="projekty" className="bg-[#020202] py-24">
+      <section id="projekty" className="bg-[#020202] py-12">
         <div className="mx-auto max-w-7xl px-6">
-          <h2>Projects</h2>
+          <h2 className="text-primary text-3xl font-bold md:text-4xl">Projects</h2>
           <ProjectCard
-            title="První projekt"
-            description="tohle je fakt cool kamo"
-            imagePath="/private-images/hero-bg.jpg"
+            title="Osobní stránka"
+            description="Tento projekt je nejnovější a jde o moji osobní stránku, milion verzí se odvrátilo až se to dostalo do tohoto stavu, který se mi velmi líbí."
+            imagePath="/private-images/lukaspopWebsite.png"
             align="left"
+            year="2026"
+            visitLink="/projects"
+          />
+          <ProjectCard
+            title="Cutouts"
+            description="kapela v irsku wtf jak se mi tohle povedlo, ale je to brutálně hustý"
+            imagePath="/private-images/cutoutsWebsite.png"
+            align="right"
             year="2025"
             visitLink="/projects"
           />
           <ProjectCard
-            title="První projekt"
-            description="tohle je fakt cool kamo"
-            imagePath="/private-images/hero-bg.jpg"
-            align="right"
+            title="Pixeldread"
+            description="takovej overkill na backend, že to ani není možný ale dobře, spoiler, mám v plánu dělat redesign celého vzhledu, protože ten kod co tam spojuje backend a frontend je nadherný, ale vizuál to celé zabijí"
+            imagePath="/private-images/pixeldreadWebsite.png"
+            align="left"
             year="2025"
             visitLink="/projects"
           />
