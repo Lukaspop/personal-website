@@ -47,8 +47,6 @@ export default function Projekty() {
 
         <h3>Frontend</h3>
 
-        <h3>Backend</h3>
-
         <h3>Tools</h3>
       </section>
 

@@ -34,10 +34,18 @@ export default function Home() {
       <section id="who-am-i" className="bg-[#020202] py-12">
         <div className="mx-auto max-w-7xl px-6">
           <h2 className="text-primary font-bold">Kdo jsem?</h2>
+
           <p className="mt-6 max-w-4xl leading-relaxed text-neutral-400">
             Jmenuji se Lukáš Pop a věnuji se vývoji moderních webových aplikací. Zaměřuji se na
             kombinaci promyšleného designu, kvalitního kódu a řešení, která jsou přehledná a snadno
             rozšiřitelná i do budoucna.
+          </p>
+
+          <p className="mt-4 text-neutral-400">
+            Pokud se o mně chcete dozvědět více, klikněte na tento odkaz →
+            <a href="cs/o-mne" className="text-primary ml-2 hover:underline">
+              Více o mně
+            </a>
           </p>
         </div>
       </section>
@@ -45,7 +53,7 @@ export default function Home() {
       <section id="services" className="bg-[#020202] py-12">
         <div className="mx-auto max-w-7xl px-6">
           <header className="mb-12 max-w-2xl">
-            <h2 className="text-primary text-3xl font-bold md:text-4xl">Services</h2>
+            <h2 className="text-primary text-3xl font-bold md:text-4xl">Nabízené služby</h2>
           </header>
           <div className="grid gap-3 md:grid-cols-3">
             <ServiceCard
@@ -67,32 +75,38 @@ export default function Home() {
         </div>
       </section>
 
-      <section id="projekty" className="bg-[#020202] py-12">
+      <section id="projekty" className="bg-[#020202] pt-12">
         <div className="mx-auto max-w-7xl px-6">
-          <h2 className="text-primary text-3xl font-bold md:text-4xl">Projects</h2>
+          <h2 className="text-primary pb-12 text-3xl font-bold md:text-4xl">Výběr z projektů</h2>
           <ProjectCard
             title="Osobní stránka"
-            description="Tento projekt je nejnovější a jde o moji osobní stránku, milion verzí se odvrátilo až se to dostalo do tohoto stavu, který se mi velmi líbí."
-            imagePath="/private-images/lukaspopWebsite.png"
+            description="Tento projekt je mým nejnovějším dílem, které má pro mě obrovskou hodnotu. Nejtěžším krokem zde byl samotný návrh stránky, ke kterému jsem se dostal až po několika pokusech."
+            imagePath="/private-images/personalWebsiteProject.jpg"
+            imageAlt="123"
             align="left"
             year="2026"
-            visitLink="/projects"
+            skills={["Figma", "Next.js", "Tailwind", "UI Design"]}
+            visitLink="/cs"
           />
           <ProjectCard
             title="Cutouts"
-            description="kapela v irsku wtf jak se mi tohle povedlo, ale je to brutálně hustý"
-            imagePath="/private-images/cutoutsWebsite.png"
+            description="Webová stránka pro kapelu Cutouts byl velmi zajímavý projekt, při kterém jsem mohl s velkou volností zapojit svou kreativitu. Kapela mi poskytla pouze logo, jejich Instagram a nahrávku živého vystoupení. Na základě těchto materiálů vzniklo několik návrhů ve Figmě, ze kterých jsme postupně dospěli k finální podobě stránky. Background, který jsem pro projekt vytvořil, by měl v budoucnu sloužit také jako motiv pro merch kapely, což je pro mě velikým úspěchem"
+            imagePath="/private-images/cutoutsWebsiteProject.jpg"
+            imageAlt="123"
             align="right"
             year="2025"
-            visitLink="/projects"
+            skills={["Figma", "Next.js", "Tailwind", "UI Design"]}
+            visitLink="https://cutouts.ie"
           />
           <ProjectCard
-            title="Pixeldread"
+            title="Pixel dread"
             description="takovej overkill na backend, že to ani není možný ale dobře, spoiler, mám v plánu dělat redesign celého vzhledu, protože ten kod co tam spojuje backend a frontend je nadherný, ale vizuál to celé zabijí"
-            imagePath="/private-images/pixeldreadWebsite.png"
+            imagePath="/private-images/pixeldreadWebsiteProject.jpg"
+            imageAlt="123"
             align="left"
             year="2025"
-            visitLink="/projects"
+            skills={["React", "ASP.NET", "SQL", "Google analytics"]}
+            visitLink="https://pixeldread.com"
           />
         </div>
       </section>

@@ -78,7 +78,6 @@ export default function Navbar() {
             </Link>
           ))}
 
-          {/* CONTACT BUTTON */}
           <a
             href="#footer"
             className="flex h-7 items-center justify-center rounded-full border border-white/15 px-3 text-sm text-white/70 transition-all duration-300 hover:border-white/40 hover:text-white"
@@ -93,8 +92,8 @@ export default function Navbar() {
             <Image
               src={
                 locale === "cs"
-                  ? "/private-images/english-flag.png"
-                  : "/private-images/czech-flag.png"
+                  ? "/private-images/czech-flag.webp"
+                  : "/private-images/english-flag.webp"
               }
               alt="switch language"
               width={36}
