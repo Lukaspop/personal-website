@@ -13,7 +13,7 @@ const poppins = Poppins({
 
 export default function Home() {
   return (
-    <main>
+    <main className="relative overflow-hidden">
       <section className="relative flex min-h-dvh items-center justify-center overflow-hidden">
         <WaveEffects />
         <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent via-70% to-[#020202]" />
@@ -26,25 +26,25 @@ export default function Home() {
           </h1>
 
           <p className="mx-auto mt-4 max-w-xl text-lg text-neutral-200 md:text-xl">
-            Webové stránky u kterých se estetika setkává s&nbsp;výkonem
+            Websites where aesthetics meet performance
           </p>
         </div>
       </section>
 
       <section id="who-am-i" className="bg-[#020202] py-12">
         <div className="mx-auto max-w-7xl px-6">
-          <h2 className="text-primary font-bold">Kdo jsem?</h2>
+          <h2 className="text-primary font-bold">Who am I?</h2>
 
           <p className="mt-6 max-w-4xl leading-relaxed text-neutral-400">
-            Jmenuji se Lukáš Pop a věnuji se vývoji moderních webových aplikací. Zaměřuji se na
-            kombinaci promyšleného designu, kvalitního kódu a řešení, která jsou přehledná a snadno
-            rozšiřitelná i do budoucna.
+            My name is Lukáš Pop and I focus on building modern web applications. I specialize in
+            combining thoughtful design with high-quality code to create solutions that are clear,
+            efficient, and easy to scale in the future.
           </p>
 
           <p className="mt-4 text-neutral-400">
-            Pokud se o mně chcete dozvědět více, klikněte na tento odkaz →
-            <a href="cs/o-mne" className="text-primary ml-2 hover:underline">
-              Více o mně
+            If you'd like to learn more about me, click the link →
+            <a href="/en/about" className="text-primary ml-2 hover:underline">
+              More about me
             </a>
           </p>
         </div>
@@ -55,55 +55,67 @@ export default function Home() {
           <header className="mb-12 max-w-2xl">
             <h2 className="text-primary text-3xl font-bold md:text-4xl">Services</h2>
           </header>
+
           <div className="grid gap-3 md:grid-cols-3">
             <ServiceCard
               title="Web Development"
-              description="Moderní webové aplikace postavené na Next.js a TypeScriptu."
+              description="Modern web applications built with Next.js and TypeScript."
               icon={<Code size={20} color="var(--neon-blue)" />}
             />
+
             <ServiceCard
               title="UI / UX"
-              description="Promyšlený design zaměřený na uživatelský zážitek."
+              description="Thoughtful design focused on user experience."
               icon={<Palette size={20} color="var(--neon-red)" />}
             />
+
             <ServiceCard
               title="Performance"
-              description="Optimalizace rychlosti a škálovatelnosti."
+              description="Optimization focused on speed and scalability."
               icon={<Zap size={20} color="var(--neon-yellow)" />}
             />
           </div>
         </div>
       </section>
 
-      <section id="projekty" className="bg-[#020202] py-12">
+      <section id="projects" className="bg-[#020202] pt-12">
         <div className="mx-auto max-w-7xl px-6">
-          <h2 className="text-primary text-3xl font-bold md:text-4xl">Projects</h2>
+          <h2 className="text-primary pb-12 text-3xl font-bold md:text-4xl">Selected Projects</h2>
+
           <ProjectCard
-            title="Osobní stránka"
-            description="Tento projekt je nejnovější a jde o moji osobní stránku, milion verzí se odvrátilo až se to dostalo do tohoto stavu, který se mi velmi líbí."
-            imagePath="/private-images/lukaspopWebsite.png"
-            imageAlt="123"
+            title="Personal Website"
+            description="This project is my most recent work and holds great personal value for me. The biggest challenge was designing the website itself, which took several iterations before I found the right direction."
+            imagePath="/private-images/personalWebsiteProject.jpg"
+            imageAlt="Screenshot of Lukaspop personal website"
             align="left"
             year="2026"
-            visitLink="/projects"
+            skills={["Figma", "Next.js", "Tailwind", "SEO"]}
+            visitLink="/en"
+            locale="en"
           />
+
           <ProjectCard
             title="Cutouts"
-            description="kapela v irsku wtf jak se mi tohle povedlo, ale je to brutálně hustý"
-            imagePath="/private-images/cutoutsWebsite.png"
-            imageAlt="123"
+            description="This website for the Irish band Cutouts was created based only on their logo, Instagram, and a recording of their live performance. From these materials, I created several Figma designs that eventually evolved into the final website. The artwork created for the site may also appear on the band's merchandise in the future."
+            imagePath="/private-images/cutoutsWebsiteProject.jpg"
+            imageAlt="Screenshot of the Cutouts band website"
             align="right"
             year="2025"
-            visitLink="/projects"
+            skills={["Figma", "WordPress", "MailerLite"]}
+            visitLink="https://cutouts.ie"
+            locale="en"
           />
+
           <ProjectCard
-            title="Pixeldread"
-            description="takovej overkill na backend, že to ani není možný ale dobře, spoiler, mám v plánu dělat redesign celého vzhledu, protože ten kod co tam spojuje backend a frontend je nadherný, ale vizuál to celé zabijí"
-            imagePath="/private-images/pixeldreadWebsite.png"
-            imageAlt="123"
+            title="Pixel Dread"
+            description="This project was my first encounter with SEO. It is a website for the mobile game Pixel Dread created by Jan S. Kostlán. The backend is very well designed, especially the instance system used for communication, but the visual design does not fully reflect the technical quality of the project. For that reason, I am preparing a redesign of the website along with improvements to several SEO elements. The project is also part of my graduation thesis."
+            imagePath="/private-images/pixeldreadWebsiteProject.jpg"
+            imageAlt="Screenshot of the Pixel Dread website"
             align="left"
             year="2025"
-            visitLink="/projects"
+            skills={["ASP.NET", "React", "SQL", "SEO", "Google Analytics"]}
+            visitLink="https://pixeldread.com"
+            locale="en"
           />
         </div>
       </section>

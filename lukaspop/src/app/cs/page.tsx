@@ -84,6 +84,7 @@ export default function Home() {
             year="2026"
             skills={["Figma", "Next.js", "Tailwind", "SEO"]}
             visitLink="/cs"
+            locale="cs"
           />
 
           <ProjectCard
@@ -95,6 +96,7 @@ export default function Home() {
             year="2025"
             skills={["Figma", "WordPress", "MailerLite"]}
             visitLink="https://cutouts.ie"
+            locale="cs"
           />
 
           <ProjectCard
@@ -106,6 +108,7 @@ export default function Home() {
             year="2025"
             skills={["ASP.NET", "React", "SQL", "SEO", "Google Analytics"]}
             visitLink="https://pixeldread.com"
+            locale="cs"
           />
         </div>
       </section>

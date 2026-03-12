@@ -9,6 +9,7 @@ interface ProjectCardProps {
   visitLink: string;
   skills?: string[];
   align?: "left" | "right";
+  locale?: "cs" | "en";
 }
 
 const ProjectCard: React.FC<ProjectCardProps> = ({
@@ -20,7 +21,10 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
   visitLink,
   skills = [],
   align = "left",
+  locale = "cs",
 }) => {
+  const ctaText = locale === "en" ? "Visit project" : "Navštívit projekt";
+
   return (
     <section
       className={`grid items-center gap-14 pb-28 lg:grid-cols-2 ${
@@ -62,7 +66,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
             rel="noopener noreferrer"
             className="group inline-flex items-center gap-2 text-sm whitespace-nowrap text-white/80 transition hover:text-white"
           >
-            Navštívit projekt
+            {ctaText}
             <span className="transition-transform duration-300 group-hover:translate-x-1">→</span>
           </a>
         </div>
