@@ -1,4 +1,5 @@
 import React from "react";
+import { ArrowUpRight } from "lucide-react";
 
 interface ProjectCardProps {
   title: string;
@@ -23,8 +24,6 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
   align = "left",
   locale = "cs",
 }) => {
-  const ctaText = locale === "en" ? "Visit project" : "Navštívit projekt";
-
   return (
     <section
       className={`grid items-center gap-14 pb-28 lg:grid-cols-2 ${
@@ -35,7 +34,15 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
       <div className="max-w-xl">
         {/* TITLE + YEAR */}
         <div className="flex items-start justify-between">
-          <h3 className="text-3xl font-semibold tracking-tight text-white">{title}</h3>
+          <a
+            href={visitLink}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex items-center gap-0 text-3xl font-semibold tracking-tight text-white"
+          >
+            {title}
+            <ArrowUpRight className="h-6 w-6 text-white" />{" "}
+          </a>
 
           <span className="text-sm text-neutral-500">{year}</span>
         </div>
@@ -45,30 +52,16 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
           {description}
         </p>
 
-        {/* SKILLS + CTA */}
-        <div className="mt-6 flex items-center justify-between gap-6">
-          {/* SKILLS */}
-          <div className="flex flex-wrap gap-2">
-            {skills.map((skill) => (
-              <span
-                key={skill}
-                className="rounded-full border border-white/10 bg-white/5 px-3 py-1 text-[12px] text-neutral-300"
-              >
-                {skill}
-              </span>
-            ))}
-          </div>
-
-          {/* CTA */}
-          <a
-            href={visitLink}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="group inline-flex items-center gap-2 text-sm whitespace-nowrap text-white/80 transition hover:text-white"
-          >
-            {ctaText}
-            <span className="transition-transform duration-300 group-hover:translate-x-1">→</span>
-          </a>
+        {/* SKILLS */}
+        <div className="mt-6 flex flex-wrap gap-2">
+          {skills.map((skill) => (
+            <span
+              key={skill}
+              className="rounded-full border border-white/10 bg-white/5 px-3 py-1 text-[12px] text-neutral-300"
+            >
+              {skill}
+            </span>
+          ))}
         </div>
       </div>
 

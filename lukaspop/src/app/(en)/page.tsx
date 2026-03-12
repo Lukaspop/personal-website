@@ -90,7 +90,7 @@ export default function Home() {
             align="left"
             year="2026"
             skills={["Figma", "Next.js", "Tailwind", "SEO"]}
-            visitLink="/en"
+            visitLink="/"
             locale="en"
           />
 
