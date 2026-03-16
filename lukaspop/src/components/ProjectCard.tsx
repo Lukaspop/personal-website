@@ -38,13 +38,14 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
             href={visitLink}
             target="_blank"
             rel="noopener noreferrer"
-            className="flex items-center gap-0 text-3xl font-semibold tracking-tight text-white"
+            className="text-white-200 group flex items-center gap-1 text-3xl font-semibold tracking-tight"
           >
-            {title}
-            <ArrowUpRight className="h-6 w-6 text-white" />{" "}
+            {/* Title text with hover effect */}
+            <span className="transition-transform group-hover:translate-x-1">{title}</span>
+            <ArrowUpRight className="h-6 w-6 text-white transition-colors group-hover:text-[#FF2455]" />
           </a>
 
-          <span className="text-sm text-neutral-500">{year}</span>
+          <span className="text-sm text-neutral-400">{year}</span>
         </div>
 
         {/* DESCRIPTION */}
@@ -73,11 +74,12 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
           rel="noopener noreferrer"
           className="group w-full max-w-[760px] cursor-pointer"
         >
-          <div className="overflow-hidden rounded-2xl border border-white/10 bg-neutral-900 p-4 transition hover:border-white/20">
+          <div className="overflow-hidden rounded-2xl border border-white/10 bg-neutral-900 p-4 transition-transform duration-500 group-hover:scale-105 group-hover:border-white/20">
+            {/* Make image unselectable */}
             <img
               src={imagePath}
               alt={imageAlt}
-              className="aspect-video w-full rounded-lg object-cover transition duration-500 group-hover:scale-[1.02]"
+              className="aspect-video w-full rounded-lg object-cover transition duration-500 select-none group-hover:scale-[1.02]"
             />
           </div>
         </a>

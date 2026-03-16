@@ -1,6 +1,20 @@
 import "../styles/globals.css";
-import NavbarEn from "@/components/Navbar";
+import Navbar from "@/components/Navbar";
 import type { Metadata } from "next";
+import Footer from "@/components/Footer";
+import { Geist, Poppins } from "next/font/google";
+
+const geist = Geist({
+  subsets: ["latin"],
+  variable: "--font-geist-sans",
+});
+
+const poppins = Poppins({
+  subsets: ["latin"],
+  weight: ["400", "500", "600", "700", "800"],
+  variable: "--font-poppins",
+  display: "swap",
+});
 
 export const metadata: Metadata = {
   robots: {
@@ -8,16 +22,18 @@ export const metadata: Metadata = {
     follow: false,
   },
 };
+
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en">
+    <html lang="en" className={`${geist.variable} ${poppins.variable}`}>
       <body>
         <div className="pointer-events-none fixed top-0 right-0 left-0 z-[999]">
           <div className="pointer-events-auto">
-            <NavbarEn />
+            <Navbar />
           </div>
         </div>
         <main>{children}</main>
+        <Footer />
       </body>
     </html>
   );

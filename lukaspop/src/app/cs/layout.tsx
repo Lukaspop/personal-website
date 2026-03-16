@@ -1,6 +1,19 @@
 import "../styles/globals.css";
 import Navbar from "@/components/Navbar";
+import Footer from "@/components/Footer";
 import type { Metadata } from "next";
+import { Geist, Poppins } from "next/font/google";
+
+const geist = Geist({
+  variable: "--font-geist-sans",
+});
+
+const poppins = Poppins({
+  subsets: ["latin"],
+  weight: ["400", "500", "600", "700", "800"],
+  variable: "--font-poppins",
+  display: "swap",
+});
 
 export const metadata: Metadata = {
   robots: {
@@ -8,19 +21,18 @@ export const metadata: Metadata = {
     follow: false,
   },
 };
+
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="cs">
-      <body className="bg-black text-white antialiased">
-        <div className="relative min-h-dvh">
-          <div className="pointer-events-none absolute inset-0 -z-10">
-            <div className="absolute inset-0 bg-gradient-to-br from-blue-600/30 via-purple-600/20 to-emerald-600/30 opacity-40 blur-3xl" />
-          </div>
-          <header className="fixed inset-x-0 top-0 z-50 h-16">
+    <html lang="cs" className={`${geist.variable} ${poppins.variable}`}>
+      <body>
+        <div className="pointer-events-none fixed top-0 right-0 left-0 z-[999]">
+          <div className="pointer-events-auto">
             <Navbar />
-          </header>
-          <main>{children}</main>
+          </div>
         </div>
+        <main>{children}</main>
+        <Footer />
       </body>
     </html>
   );

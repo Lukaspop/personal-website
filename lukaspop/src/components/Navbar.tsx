@@ -59,7 +59,11 @@ export default function Navbar() {
       <div className="mx-auto flex h-16 max-w-7xl items-center justify-between px-6">
         <Link
           href={locale === "cs" ? "/cs" : "/"}
-          className="cursor-pointer [font-family:var(--font-poppins)] text-xl font-semibold tracking-[0.008em] text-white"
+          className="text-white-200 cursor-pointer text-[22px] leading-none tracking-[0.01em]"
+          style={{
+            fontFamily: "var(--font-poppins), sans-serif",
+            fontWeight: 700,
+          }}
         >
           Lukaspop
           <span className="text-[#FF2455] drop-shadow-[0_0_30px_rgba(255,36,85,0.6)]">+</span>
@@ -71,7 +75,7 @@ export default function Navbar() {
               key={item.href}
               href={item.href}
               className={`ml-2 flex h-7 cursor-pointer items-center transition-colors duration-200 ${
-                isActive(item.href) ? "text-white" : "text-white/60 hover:text-white"
+                isActive(item.href) ? "text-white-200" : "text-white/60 hover:text-white"
               }`}
             >
               {item.label}
