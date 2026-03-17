@@ -27,12 +27,13 @@ export default function Footer() {
   return (
     <footer id="footer" className="border-t border-white/10 bg-black">
       <div className="mx-auto max-w-7xl px-6 py-16">
-        <div className="grid gap-12 md:grid-cols-4">
-          {/* BRAND */}
-          <div className="space-y-4">
+        {/* 🔥 MOBILE = 2x2 GRID */}
+        <div className="grid grid-cols-2 gap-10 md:grid-cols-4">
+          {/* LOGO */}
+          <div className="space-y-3">
             <Link
               href={locale === "cs" ? "/cs" : "/"}
-              className="cursor-pointer text-[22px] leading-none tracking-[0.01em] text-white"
+              className="block text-[22px] leading-none text-white"
               style={{
                 fontFamily: "var(--font-poppins), sans-serif",
                 fontWeight: 700,
@@ -42,19 +43,19 @@ export default function Footer() {
               <span className="text-[#FF2455] drop-shadow-[0_0_30px_rgba(255,36,85,0.6)]">+</span>
             </Link>
 
-            <p className="text-sm text-neutral-500">Lukáš Pop © {new Date().getFullYear()}</p>
+            <p className="text-xs text-neutral-500">Lukáš Pop © {new Date().getFullYear()}</p>
           </div>
 
           {/* QUICK LINKS */}
           <div>
-            <h4 className="mb-4 text-sm font-medium tracking-wider text-neutral-500 uppercase">
+            <h4 className="mb-3 text-xs tracking-[0.2em] text-neutral-500 uppercase">
               Quick links
             </h4>
 
             <ul className="space-y-2 text-sm">
               {links.map((link) => (
                 <li key={link.href}>
-                  <Link href={link.href} className="text-neutral-400 transition hover:text-white">
+                  <Link href={link.href} className="text-neutral-400 hover:text-white">
                     {link.label}
                   </Link>
                 </li>
@@ -64,9 +65,7 @@ export default function Footer() {
 
           {/* LEGAL */}
           <div>
-            <h4 className="mb-4 text-sm font-medium tracking-wider text-neutral-500 uppercase">
-              Legal
-            </h4>
+            <h4 className="mb-3 text-xs tracking-[0.2em] text-neutral-500 uppercase">Legal</h4>
 
             <ul className="space-y-2 text-sm">
               <li>
@@ -91,14 +90,18 @@ export default function Footer() {
 
           {/* REACH ME */}
           <div>
-            <h4 className="mb-4 text-sm font-medium tracking-wider text-neutral-500 uppercase">
-              Reach me
-            </h4>
+            <h4 className="mb-3 text-xs tracking-[0.2em] text-neutral-500 uppercase">Reach me</h4>
 
             <ul className="space-y-2 text-sm">
               <li>
                 <a href="mailto:hello@lukaspop.com" className="text-neutral-400 hover:text-white">
                   hello@lukaspop.com
+                </a>
+              </li>
+
+              <li>
+                <a href="tel:+420720285566" className="text-neutral-400 hover:text-white">
+                  +420 720 285 566
                 </a>
               </li>
 
