@@ -156,7 +156,7 @@ export default function Navbar() {
               width={28}
               height={28}
             />
-            <span>{locale === "cs" ? "English" : "Čeština"}</span>
+            <span>{locale === "cs" ? "Čeština" : "English"}</span>
           </button>
         </div>
       </div>
