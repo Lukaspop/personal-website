@@ -149,8 +149,8 @@ export default function Navbar() {
             <Image
               src={
                 locale === "cs"
-                  ? "/private-images/english-flag.png"
-                  : "/private-images/czech-flag.png"
+                  ? "/private-images/english-flag.webp"
+                  : "/private-images/czech-flag.webp"
               }
               alt="switch language"
               width={28}
