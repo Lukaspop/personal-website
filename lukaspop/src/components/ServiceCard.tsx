@@ -14,7 +14,6 @@ export function ServiceCard({ title, description, icon, iconColor }: ServiceCard
 
   return (
     <div className="relative rounded-3xl border border-white/10 bg-[#0A0A0A] p-8">
-      {/* Icon container */}
       <div
         className="absolute top-5 right-5 flex h-12 w-12 items-center justify-center rounded-2xl"
         style={{

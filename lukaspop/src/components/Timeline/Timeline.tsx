@@ -82,7 +82,7 @@ export function Timeline({ data, heading, subheading }: Props) {
   return (
     <section
       ref={sectionRef}
-      className="relative mx-auto max-w-7xl pt-12 pb-48 pl-6 md:pt-12 md:pb-6"
+      className="relative mx-auto max-w-7xl pt-12 pl-6 md:pt-12 md:pb-6 lg:pb-24"
     >
       <div className="grid gap-14 md:grid-cols-2 md:gap-24">
         <div className="h-fit md:sticky md:top-1/2 md:-translate-y-1/2">

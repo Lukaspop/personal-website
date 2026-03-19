@@ -27,9 +27,7 @@ export default function Footer() {
   return (
     <footer id="footer" className="border-t border-white/10 bg-black">
       <div className="mx-auto max-w-7xl px-6 py-16">
-        {/* 🔥 MOBILE = 2x2 GRID */}
         <div className="grid grid-cols-2 gap-10 md:grid-cols-4">
-          {/* LOGO */}
           <div className="space-y-3">
             <Link
               href={locale === "cs" ? "/cs" : "/"}
@@ -46,11 +44,8 @@ export default function Footer() {
             <p className="text-xs text-neutral-500">Lukáš Pop © {new Date().getFullYear()}</p>
           </div>
 
-          {/* QUICK LINKS */}
           <div>
-            <h4 className="mb-3 text-xs tracking-[0.2em] text-neutral-500 uppercase">
-              Quick links
-            </h4>
+            <p className="mb-3 text-xs tracking-[0.04em] text-neutral-500 uppercase">Quick links</p>
 
             <ul className="space-y-2 text-sm">
               {links.map((link) => (
@@ -63,9 +58,8 @@ export default function Footer() {
             </ul>
           </div>
 
-          {/* LEGAL */}
           <div>
-            <h4 className="mb-3 text-xs tracking-[0.2em] text-neutral-500 uppercase">Legal</h4>
+            <p className="mb-3 text-xs tracking-[0.04em] text-neutral-500 uppercase">Legal</p>
 
             <ul className="space-y-2 text-sm">
               <li>
@@ -88,9 +82,8 @@ export default function Footer() {
             </ul>
           </div>
 
-          {/* REACH ME */}
           <div>
-            <h4 className="mb-3 text-xs tracking-[0.2em] text-neutral-500 uppercase">Reach me</h4>
+            <p className="mb-3 text-xs tracking-[0.04em] text-neutral-500 uppercase">Reach me</p>
 
             <ul className="space-y-2 text-sm">
               <li>

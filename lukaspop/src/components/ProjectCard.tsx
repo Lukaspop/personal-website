@@ -30,9 +30,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
         align === "right" ? "lg:[&>*:first-child]:order-2" : ""
       }`}
     >
-      {/* TEXT */}
       <div className="max-w-xl">
-        {/* TITLE + YEAR */}
         <div className="flex items-start justify-between">
           <a
             href={visitLink}
@@ -40,7 +38,6 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
             rel="noopener noreferrer"
             className="text-white-200 group flex items-center gap-1 text-3xl font-semibold tracking-tight"
           >
-            {/* Title text with hover effect */}
             <span className="transition-transform group-hover:translate-x-1">{title}</span>
             <ArrowUpRight className="h-6 w-6 text-white transition-colors group-hover:text-[#FF2455]" />
           </a>
@@ -48,12 +45,10 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
           <span className="text-sm text-neutral-400">{year}</span>
         </div>
 
-        {/* DESCRIPTION */}
         <p className="mt-4 max-w-[420px] text-[15px] leading-[1.6] text-neutral-400">
           {description}
         </p>
 
-        {/* SKILLS */}
         <div className="mt-6 flex flex-wrap gap-2">
           {skills.map((skill) => (
             <span
@@ -66,7 +61,6 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
         </div>
       </div>
 
-      {/* IMAGE */}
       <div className="flex justify-center">
         <a
           href={visitLink}
@@ -75,7 +69,6 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
           className="group w-full max-w-[760px] cursor-pointer"
         >
           <div className="overflow-hidden rounded-2xl border border-white/10 bg-neutral-900 p-4 transition-transform duration-500 group-hover:scale-105 group-hover:border-white/20">
-            {/* Make image unselectable */}
             <img
               src={imagePath}
               alt={imageAlt}

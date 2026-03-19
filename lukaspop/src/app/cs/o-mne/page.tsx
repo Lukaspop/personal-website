@@ -6,57 +6,66 @@ import TechStack from "@/components/Techstack";
 export default function OMne() {
   const data = [
     {
-      year: "2010",
+      year: "2011",
       title: "ZUŠ",
       description:
-        "Přibližně 10 let jsem navštěvoval základní uměleckou školu, kde jsem si vybudoval cit pro kreativitu, detail a tvorbu.",
+        "Základní umělecká škola. Tady to asi všechno začalo, poprvé jsem se zde totiž setkal s uměním. Chodil jsem sem necelých deset let každé úterý.",
     },
     {
       year: "2019",
-      title: "První zmínky",
+      title: "První technické zmínky",
       description:
-        "První kontakt s weby a technickým světem. Začal jsem experimentovat s jednoduchými projekty.",
+        "Ani nevím, co mě k tomu vedlo, ale každopádně v té době vznikly moje první řádky HTML někde v nějakém online learning programu.",
     },
     {
       year: "2021",
       title: "SPŠSE",
       description:
-        "Studium na SPŠSE, kde jsem začal rozvíjet programování a práci s technologiemi systematičtěji.",
+        "Nástup na střední průmyslovou školu informatiky, tohle byl pro mě klíčový bod, kdy moje hraní s kódem dostalo konečně nějakou formu.",
+    },
+    {
+      year: "2023",
+      title: "Dreamind",
+      description:
+        "Moje první praxe ve firmě, kde jsem se pak ukázal i následující rok. Pomáhal jsem zde s vývojem aplikace v Reactu.",
     },
     {
       year: "2025",
       title: "Maturita",
       description:
-        "Dokončení střední školy pro mě znamenalo velkou změnu a posun směrem k profesionálnější práci.",
-    },
-    {
-      year: "2025",
-      title: "Vysoká škola",
-      description: "Nástup na vysokou školu a další rozvoj v oblasti softwarového inženýrství.",
+        "Dokončení střední školy, která mě naučila mnohem více, než jsem si původně myslel.",
     },
     {
       year: "2025",
       title: "Erasmus+ & Digital Funnel",
-      description: "Zkušenost ze zahraničí a práce v digitální agentuře Digital Funnel.",
+      description:
+        "Po škole jsem hned letěl na Erasmus do Irska, kde jsem nasbíral mnoho zkušeností, hlavně se spoluprací, a víc se dostal k SEO.",
     },
     {
       year: "2025",
-      title: "Freelancing",
-      description: "Začal jsem pracovat na vlastních projektech a moderních webových aplikacích.",
+      title: "Vysoká škola",
+      description:
+        "Nástup na vysokou školu byl pro mě docela chaotický, ale věřím, že se časem dostanu k tématům která jsou mi bližší, protože bakalářské studium je zatím velmi obecné.",
+    },
+
+    {
+      year: "2025",
+      title: "Freelancing & Digital Funnel",
+      description:
+        "Spolupráce s Digital Funnelem mi vydržela i po Erasmu, kolega mi dokonce i dohodil zakázku pro místní kapelu, za což mu dodnes moc děkuji. If you’re reading this, thanks, Gene.",
     },
     {
       year: "2026",
       title: "Budoucnost",
-      description: "Pokud se tady chcete vidět, neváhejte mi napsat.",
+      description:
+        "Budoucnost moc předurčit nejde, ale pokud chcete být její součástí, neváhejte se mi ozvat.",
       dashed: true,
     },
   ];
 
   return (
     <PageWrapper>
-      {/* HERO */}
       <section className="mx-auto grid min-h-[calc(100vh-64px)] max-w-7xl items-center gap-14 px-6 py-16 lg:grid-cols-2">
-        {/* TEXT */}
         <div className="max-w-2xl space-y-6">
           <h1 className="text-4xl font-bold tracking-tight text-white md:text-5xl lg:text-6xl">
             O mně
@@ -72,13 +81,12 @@ export default function OMne() {
             místo na stránce má svůj význam a dohromady tvoří výsledný dojem z produktu.
           </p>
 
-          {/* INFO CARDS */}
           <div className="grid gap-4 pt-4 sm:grid-cols-2">
             <div className="rounded-xl border border-white/10 bg-white/[0.03] p-5">
               <p className="text-xs tracking-wider text-neutral-500 uppercase">Zaměření</p>
 
               <p className="mt-2 text-sm leading-relaxed text-neutral-300">
-                Tady musím přidat věci.
+                Frontend a webový vývoj
               </p>
             </div>
 
@@ -86,13 +94,12 @@ export default function OMne() {
               <p className="text-xs tracking-wider text-neutral-500 uppercase">Mimo tech</p>
 
               <p className="mt-2 text-sm leading-relaxed text-neutral-300">
-                Tady musím přidat věci.
+                Fitness, budoucí osobní trenér
               </p>
             </div>
           </div>
         </div>
 
-        {/* IMAGE */}
         <div className="flex justify-center lg:justify-end">
           <div className="relative">
             <div className="absolute inset-0 scale-110 rounded-full bg-gradient-to-tr from-pink-500/20 via-purple-500/10 to-blue-500/20 blur-3xl" />
@@ -110,21 +117,19 @@ export default function OMne() {
         </div>
       </section>
 
-      {/* TECH STACK */}
       <section className="mx-auto max-w-7xl px-6 py-16 md:py-24">
         <div className="mb-10 max-w-2xl md:mb-12">
           <h2 className="text-3xl font-semibold text-white md:text-4xl">V čem mám zkušenosti</h2>
 
           <p className="mt-3 text-neutral-400">
-            Technologie a nástroje, se kterými nejčastěji pracuji při návrhu, vývoji a nasazení
-            webových aplikací.
+            Nejradši se zabývám frontendovým vývojem, protože v něm mám nejvíce zkušeností, ale
+            nebráním se ani jiným technologiím.
           </p>
         </div>
 
         <TechStack />
       </section>
 
-      {/* TIMELINE */}
       <Timeline
         data={data}
         heading="Můj příběh"

@@ -6,7 +6,6 @@ import ProjectCard from "@/components/ProjectCard";
 export default function Projekty() {
   return (
     <PageWrapper>
-      {/* HERO */}
       <section className="mx-auto max-w-7xl pt-24 pb-16">
         <div className="max-w-2xl space-y-6">
           <h1 className="text-4xl font-bold text-white md:text-5xl">Projekty</h1>

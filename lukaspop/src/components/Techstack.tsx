@@ -19,6 +19,8 @@ import {
   JavascriptOriginal,
   PhpOriginal,
   WordpressOriginal,
+  TypescriptOriginal,
+  PythonOriginal,
 } from "devicons-react";
 
 type StackItem = {
@@ -39,6 +41,7 @@ const groups: StackGroup[] = [
       { icon: Css3Original, name: "CSS" },
       { icon: SassOriginal, name: "SCSS" },
       { icon: JavascriptOriginal, name: "JavaScript" },
+      { icon: TypescriptOriginal, name: "TypeScript" },
       { icon: ReactOriginal, name: "React" },
       { icon: NextjsOriginal, name: "Next.js" },
       { icon: TailwindcssOriginal, name: "Tailwind" },
@@ -50,6 +53,8 @@ const groups: StackGroup[] = [
       { icon: NodejsOriginal, name: "Node.js" },
       { icon: DotnetcoreOriginal, name: ".NET" },
       { icon: CsharpOriginal, name: "C#" },
+      { icon: PhpOriginal, name: "PHP" },
+      { icon: PythonOriginal, name: "Python" },
       { icon: PostgresqlOriginal, name: "PostgreSQL" },
       { icon: MysqlOriginal, name: "SQL" },
       { icon: PrismaOriginal, name: "Prisma" },
@@ -59,6 +64,7 @@ const groups: StackGroup[] = [
     title: "Tools",
     items: [
       { icon: GitOriginal, name: "Git" },
+      { icon: WordpressOriginal, name: "Wordpress" },
       { icon: DockerOriginal, name: "Docker" },
       { icon: FigmaOriginal, name: "Figma" },
     ],

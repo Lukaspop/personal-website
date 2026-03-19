@@ -35,13 +35,16 @@ export default function Home() {
           <h2 className="text-primary font-bold">Kdo jsem?</h2>
 
           <p className="mt-6 max-w-4xl leading-relaxed text-neutral-400">
-            Jmenuji se Lukáš Pop a věnuji se vývoji moderních webových aplikací. Zaměřuji se na
-            kombinaci promyšleného designu, kvalitního kódu a řešení, která jsou přehledná a snadno
-            rozšiřitelná i do budoucna.
+            Málem jsem se zapomněl představit. Jmenuji se Lukáš&nbsp;Pop a&nbsp;věnuji se tvorbě
+            webových stránek i&nbsp;aplikací od samého návrhu až po nasazení. Záleží mi hlavně na
+            výkonu a&nbsp;udržitelnosti, přičemž se tuto kombinaci snažím zabalit do pro oči
+            příznivého obalu.
           </p>
 
+          <p></p>
+
           <p className="mt-4 text-neutral-400">
-            Pokud se o mně chcete dozvědět více, klikněte na tento odkaz →
+            Pokud byste se o&nbsp;mně zajímali více do hloubky, přečtěte si více pod tímto odkazem →
             <a href="cs/o-mne" className="text-primary ml-2 hover:underline">
               Více o mně
             </a>
@@ -106,7 +109,7 @@ export default function Home() {
             imageAlt="Screenshot webové stránky Pixel Dread"
             align="left"
             year="2025"
-            skills={["ASP.NET", "React", "SQL", "SEO", "Google Analytics"]}
+            skills={["ASP.NET", "REST API", "React", "SQL", "SEO", "Google Analytics"]}
             visitLink="https://pixeldread.com"
             locale="cs"
           />
