@@ -23,6 +23,15 @@ export const metadata: Metadata = {
     index: false,
     follow: false,
   },
+
+  title: {
+    default: "Lukaspop | Websites where aesthetics meet performance",
+    template: "%s | Lukaspop",
+  },
+  description: "Fill out.",
+  alternates: {
+    canonical: "https://lukaspop.com/",
+  },
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {

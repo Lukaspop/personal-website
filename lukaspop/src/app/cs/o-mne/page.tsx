@@ -3,6 +3,12 @@ import { Timeline } from "@/components/Timeline/Timeline";
 import Image from "next/image";
 import TechStack from "@/components/Techstack";
 
+export const metadata = {
+  title: "O mně",
+  alternates: {
+    canonical: "https://lukaspop.com/cs/o-mne",
+  },
+};
 export default function OMne() {
   const data = [
     {

@@ -41,7 +41,8 @@ export default function Footer() {
               <span className="text-[#FF2455] drop-shadow-[0_0_30px_rgba(255,36,85,0.6)]">+</span>
             </Link>
 
-            <p className="text-xs text-neutral-500">Lukáš Pop © {new Date().getFullYear()}</p>
+            <p className="mb-2 text-xs text-neutral-500">Lukáš Pop © {new Date().getFullYear()}</p>
+            <p className="text-xs text-neutral-500">Prague | Liberec</p>
           </div>
 
           <div>

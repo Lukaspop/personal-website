@@ -1,10 +1,13 @@
-"use client";
-
 import PageWrapper from "@/components/PageWrapper";
 import { Timeline } from "@/components/Timeline/Timeline";
 import Image from "next/image";
 import TechStack from "@/components/Techstack";
-
+export const metadata = {
+  title: "About me",
+  alternates: {
+    canonical: "https://lukaspop.com/about-me",
+  },
+};
 export default function About() {
   const data = [
     {

@@ -11,6 +11,7 @@ interface ProjectCardProps {
   skills?: string[];
   align?: "left" | "right";
   locale?: "cs" | "en";
+  as?: "h2" | "h3" | "h4";
 }
 
 const ProjectCard: React.FC<ProjectCardProps> = ({
@@ -23,24 +24,29 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
   skills = [],
   align = "left",
   locale = "cs",
+  as = "h3",
 }) => {
+  const Heading = as;
+
   return (
-    <section
-      className={`grid items-center gap-14 pb-28 lg:grid-cols-2 ${
+    <article
+      className={`grid items-center gap-14 pb-20 lg:grid-cols-2 ${
         align === "right" ? "lg:[&>*:first-child]:order-2" : ""
       }`}
     >
       <div className="max-w-xl">
         <div className="flex items-start justify-between">
-          <a
-            href={visitLink}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-white-200 group flex items-center gap-1 text-3xl font-semibold tracking-tight"
-          >
-            <span className="transition-transform group-hover:translate-x-1">{title}</span>
-            <ArrowUpRight className="h-6 w-6 text-white transition-colors group-hover:text-[#FF2455]" />
-          </a>
+          <Heading className="text-3xl font-semibold tracking-tight">
+            <a
+              href={visitLink}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-white-200 group flex items-center gap-1"
+            >
+              <span className="transition-transform group-hover:translate-x-1">{title}</span>
+              <ArrowUpRight className="h-6 w-6 text-white transition-colors group-hover:text-[#FF2455]" />
+            </a>
+          </Heading>
 
           <span className="text-sm text-neutral-400">{year}</span>
         </div>
@@ -77,7 +83,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
           </div>
         </a>
       </div>
-    </section>
+    </article>
   );
 };
 

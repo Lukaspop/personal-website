@@ -23,6 +23,14 @@ export const metadata: Metadata = {
     index: false,
     follow: false,
   },
+  title: {
+    default: "Lukaspop | Webové stránky u kterých se estetika setkává s výkonem",
+    template: "%s | Lukaspop",
+  },
+  description: "Doplnit.",
+  alternates: {
+    canonical: "https://lukaspop.com/cs",
+  },
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {

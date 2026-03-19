@@ -1,8 +1,11 @@
-"use client";
-
 import PageWrapper from "@/components/PageWrapper";
 import ProjectCard from "@/components/ProjectCard";
-
+export const metadata = {
+  title: "Projects",
+  alternates: {
+    canonical: "https://lukaspop.com/projects",
+  },
+};
 export default function Projects() {
   return (
     <PageWrapper>
@@ -28,6 +31,7 @@ export default function Projects() {
           skills={["Figma", "Next.js", "Tailwind", "SEO"]}
           visitLink="/en"
           locale="en"
+          as="h2"
         />
 
         <ProjectCard
@@ -40,6 +44,7 @@ export default function Projects() {
           skills={["Figma", "WordPress", "MailerLite"]}
           visitLink="https://cutouts.ie"
           locale="en"
+          as="h2"
         />
 
         <ProjectCard
@@ -52,6 +57,7 @@ export default function Projects() {
           skills={["ASP.NET", "React", "SQL", "SEO"]}
           visitLink="https://pixeldread.com"
           locale="en"
+          as="h2"
         />
 
         <ProjectCard
@@ -64,6 +70,7 @@ export default function Projects() {
           skills={["PHP", "WordPress", "Figma"]}
           visitLink="https://buckleyelectrical.ie/solar-panel-calculator/"
           locale="en"
+          as="h2"
         />
 
         <ProjectCard
@@ -76,6 +83,7 @@ export default function Projects() {
           skills={["PHP", "WordPress", "Figma"]}
           visitLink="https://gsbcapital.ie/pension-planning/pension-calculator/#calculator"
           locale="en"
+          as="h2"
         />
 
         <ProjectCard
@@ -88,6 +96,7 @@ export default function Projects() {
           skills={["React"]}
           visitLink="#"
           locale="en"
+          as="h2"
         />
       </section>
     </PageWrapper>
