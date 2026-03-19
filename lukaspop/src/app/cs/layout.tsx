@@ -2,16 +2,19 @@ import "../styles/globals.css";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import type { Metadata } from "next";
-import { Geist, Poppins } from "next/font/google";
-
-const geist = Geist({
-  variable: "--font-geist-sans",
-});
+import { Geist, Poppins, Outfit } from "next/font/google";
 
 const poppins = Poppins({
   subsets: ["latin"],
   weight: ["400", "500", "600", "700", "800"],
   variable: "--font-poppins",
+  display: "swap",
+});
+
+const outfit = Outfit({
+  subsets: ["latin"],
+  weight: ["400", "500", "600", "700", "800"],
+  variable: "--font-outfit",
   display: "swap",
 });
 
@@ -24,7 +27,7 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="cs" className={`${geist.variable} ${poppins.variable}`}>
+    <html lang="cs" className={`${outfit.variable} ${poppins.variable}`}>
       <body>
         <div className="pointer-events-none fixed top-0 right-0 left-0 z-[999]">
           <div className="pointer-events-auto">

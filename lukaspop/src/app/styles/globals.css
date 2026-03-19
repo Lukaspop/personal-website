@@ -13,8 +13,9 @@
   --detail-primary: #ff2455;
   --detail-secondary: #ffa1ad;
 
-  --font-geist-sans: "Geist Sans", system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+  --font-outfit: "Outfit", system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
   --font-poppins: "Poppins", system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+
   --neon-red: #fa2d37;
   --neon-blue: #6569f0;
   --neon-yellow: #f59f1d;
@@ -29,16 +30,15 @@ body {
 body {
   background: var(--bg);
   color: var(--text-primary);
-  font-family: var(--font-geist-sans);
+  font-family: var(--font-outfit);
 }
+
 @layer theme {
   :root,
   :host {
     --color-black: initial;
   }
 }
-
-@import "tailwindcss";
 
 @layer base {
   html {
@@ -47,6 +47,7 @@ body {
 
   body {
     @apply bg-white text-neutral-900 antialiased;
+    font-family: var(--font-outfit);
   }
 
   h1 {
@@ -73,6 +74,7 @@ body {
     @apply text-sm text-neutral-500;
   }
 }
+
 @layer utilities {
   @keyframes navbar-enter {
     0% {

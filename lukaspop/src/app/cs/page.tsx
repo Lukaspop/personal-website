@@ -25,7 +25,7 @@ export default function Home() {
             <span className="text-[#FF2455] drop-shadow-[0_0_25px_rgba(255,36,85,0.6)]">+</span>
           </h1>
 
-          <p className="mx-auto mt-4 max-w-xl text-lg text-neutral-200 md:text-xl">
+          <p className="mx-auto mt-4 max-w-xl px-8 text-lg text-neutral-200 md:text-xl">
             Webové stránky u kterých se estetika setkává s&nbsp;výkonem
           </p>
         </div>
