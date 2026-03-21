@@ -14,8 +14,8 @@ export default function Projekty() {
           <h1 className="text-4xl font-bold text-white md:text-5xl">Projekty</h1>
 
           <p className="text-lg text-neutral-400">
-            Výběr projektů, na kterých jsem pracoval. Každý z nich řeší jiný problém a posunul mě o
-            krok dál.
+            Toto jsou mé publikované a dokončené projekty, seřazené od nejnovějších. Ukazují, jak se
+            moje práce v průběhu času posunula.
           </p>
         </div>
       </section>
@@ -23,9 +23,9 @@ export default function Projekty() {
       <section className="max-w-7xl">
         <ProjectCard
           title="Osobní stránka"
-          description="Můj aktuální projekt, na kterém jsem řešil design, strukturu i technické provedení. Největší výzvou bylo najít správný směr a vytvořit konzistentní vizuální identitu."
+          description="Projekt, který se mě držel delší dobu a prošel několika kompletními redesigny, než dosáhl své finální podoby. Každá verze mě postupně posouvala blíž k výsledku, se kterým jsem dnes spokojený. Důraz je zde kladen na výkon a taky na SEO."
           imagePath="/private-images/personalWebsiteProject.jpg"
-          imageAlt="Osobní web Lukaspop"
+          imageAlt="Osobní stránka Lukaspop+"
           align="left"
           year="2026"
           skills={["Figma", "Next.js", "Tailwind", "SEO"]}
@@ -36,7 +36,7 @@ export default function Projekty() {
 
         <ProjectCard
           title="Cutouts"
-          description="Web pro irskou kapelu vytvořený na základě jejich vizuální identity a hudby. Návrh vznikl ve Figmě a následně byl převeden do finální podoby."
+          description=""
           imagePath="/private-images/cutoutsWebsiteProject.jpg"
           imageAlt="Cutouts web"
           align="right"
@@ -94,7 +94,7 @@ export default function Projekty() {
           align="right"
           year="2024"
           skills={["React"]}
-          visitLink="#"
+          visitLink="https://pslib-cz.github.io/2023-p3a-mpa-react-project-Lukypop"
           locale="cs"
           as="h2"
         />
