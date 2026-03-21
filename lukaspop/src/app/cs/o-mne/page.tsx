@@ -15,7 +15,7 @@ export default function OMne() {
       year: "2011",
       title: "ZUŠ",
       description:
-        "Základní umělecká škola. Tady to asi všechno začalo, poprvé jsem se zde totiž setkal s uměním. Chodil jsem sem necelých deset let každé úterý.",
+        "Základní umělecká škola. Tady to asi všechno začalo, poprvé jsem se zde totiž setkal s uměním. Během deseti let, jsem měl možnost vyzkoušet si několik forem umění a vyvíjela se mi zde má kreativita.",
     },
     {
       year: "2019",
@@ -78,13 +78,13 @@ export default function OMne() {
           </h1>
 
           <p className="text-lg leading-relaxed text-neutral-300">
-            Ahoj, jmenuji se Lukáš a věnuji se vývoji webových aplikací a moderních webových
-            stránek.
+            Ahoj, jmenuji se Lukáš a na této stránce najdete přehled mých zkušeností, toho, čemu se
+            věnuji, a co mě přivedlo k tvorbě webů.
           </p>
 
           <p className="leading-relaxed text-neutral-400">
-            Weby beru jako kombinaci techniky a estetiky. Každý detail, každý pixel a každé prázdné
-            místo na stránce má svůj význam a dohromady tvoří výsledný dojem z produktu.
+            Weby jsou pro mě svým způsobem formou umění, která kromě své vizuální stránky napomáhá
+            značkám růst a oslovovat nové zákazníky.
           </p>
 
           <div className="grid gap-4 pt-4 sm:grid-cols-2">

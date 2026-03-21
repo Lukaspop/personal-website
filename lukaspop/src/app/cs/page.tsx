@@ -58,18 +58,18 @@ export default function Home() {
           </header>
           <div className="grid gap-3 md:grid-cols-3">
             <ServiceCard
-              title="Web Development"
-              description="Moderní webové aplikace postavené na Next.js a TypeScriptu."
+              title="Prezentační web na míru"
+              description="Provedu vás celým procesem od samotného návrhu po nasazení a vytvořím web, který pomůže zviditelnit vás či vaši značku."
               icon={<Code size={20} color="var(--neon-blue)" />}
             />
             <ServiceCard
-              title="UI / UX"
-              description="Promyšlený design zaměřený na uživatelský zážitek."
+              title="Webová aplikace"
+              description="Vytvořím řešení na míru, které vám ušetří čas a zlepší uživatelský zážitek na vašem webu."
               icon={<Palette size={20} color="var(--neon-red)" />}
             />
             <ServiceCard
-              title="Performance"
-              description="Optimalizace rychlosti a škálovatelnosti."
+              title="SEO & Online viditelnost"
+              description="Zlepším vaši pozici ve vyhledávačích, nastavím Google Analytics, vytvořím Google Business a odstraním nedostatky vašeho webu."
               icon={<Zap size={20} color="var(--neon-yellow)" />}
             />
           </div>

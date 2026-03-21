@@ -2,58 +2,69 @@ import PageWrapper from "@/components/PageWrapper";
 import { Timeline } from "@/components/Timeline/Timeline";
 import Image from "next/image";
 import TechStack from "@/components/Techstack";
+
 export const metadata = {
   title: "About me",
   alternates: {
     canonical: "https://lukaspop.com/about-me",
   },
 };
+
 export default function About() {
   const data = [
     {
-      year: "2010",
+      year: "2011",
       title: "Art School",
       description:
-        "I spent around 10 years attending an art school, where I developed a strong sense for creativity, detail, and visual thinking.",
+        "This is probably where it all started. It was my first real encounter with art, and over ten years I had the opportunity to explore different forms of it and gradually develop my creativity.",
     },
     {
       year: "2019",
-      title: "First Steps",
+      title: "First technical steps",
       description:
-        "My first exposure to web development and technology. I started experimenting with simple projects.",
+        "I’m not entirely sure what led me to it, but around this time I wrote my first lines of HTML somewhere in an online learning platform.",
     },
     {
       year: "2021",
       title: "SPŠSE",
       description:
-        "Studied at SPŠSE, where I began developing programming skills and working with technology more systematically.",
+        "Starting a technical secondary school focused on IT was a key moment for me, when my experimenting with code finally started to take shape.",
+    },
+    {
+      year: "2023",
+      title: "Dreamind",
+      description:
+        "My first internship in a company, where I also returned the following year. I helped with developing an application in React.",
     },
     {
       year: "2025",
       title: "Graduation",
       description:
-        "Finishing high school marked a major step forward towards a more professional approach to my work.",
-    },
-    {
-      year: "2025",
-      title: "University",
-      description: "Started university and continued developing my skills in software engineering.",
+        "Finishing secondary school, which taught me much more than I originally expected.",
     },
     {
       year: "2025",
       title: "Erasmus+ & Digital Funnel",
       description:
-        "Gained international experience and worked in a digital agency environment at Digital Funnel.",
+        "After finishing school, I went to Ireland for Erasmus, where I gained valuable experience, mainly in collaboration, and got more into SEO.",
     },
     {
       year: "2025",
-      title: "Freelancing",
-      description: "Started working on my own projects and building modern web applications.",
+      title: "University",
+      description:
+        "Starting university was quite chaotic, but I believe I will gradually move closer to topics that suit me better, as the bachelor’s programme is still quite general.",
+    },
+    {
+      year: "2025",
+      title: "Freelancing & Digital Funnel",
+      description:
+        "My collaboration with Digital Funnel continued even after Erasmus. A colleague even referred me to a project for a local band, for which I’m still very grateful. If you’re reading this, thanks, Gene.",
     },
     {
       year: "2026",
       title: "Future",
-      description: "If you see yourself here, feel free to reach out.",
+      description:
+        "The future is hard to predict, but if you would like to be part of it, feel free to reach out.",
       dashed: true,
     },
   ];
@@ -67,12 +78,13 @@ export default function About() {
           </h1>
 
           <p className="text-lg leading-relaxed text-neutral-300">
-            Hi, I’m Lukáš and I focus on building modern web applications and websites.
+            Hi, my name is Lukas and on this page you can find an overview of my experience, what I
+            do, and what led me to building websites.
           </p>
 
           <p className="leading-relaxed text-neutral-400">
-            I see websites as a combination of technology and aesthetics. Every detail, every pixel,
-            and every piece of whitespace has its purpose and contributes to the final experience.
+            I see websites as a form of modern art that, beyond their visual side, help brands grow
+            and reach new customers.
           </p>
 
           <div className="grid gap-4 pt-4 sm:grid-cols-2">
@@ -80,7 +92,7 @@ export default function About() {
               <p className="text-xs tracking-wider text-neutral-500 uppercase">Focus</p>
 
               <p className="mt-2 text-sm leading-relaxed text-neutral-300">
-                Web development, UI/UX design, and performance-driven solutions.
+                Frontend and web development
               </p>
             </div>
 
@@ -88,7 +100,7 @@ export default function About() {
               <p className="text-xs tracking-wider text-neutral-500 uppercase">Outside tech</p>
 
               <p className="mt-2 text-sm leading-relaxed text-neutral-300">
-                Design, creativity, and exploring new ideas beyond the digital world.
+                Fitness, future personal trainer
               </p>
             </div>
           </div>
@@ -113,10 +125,13 @@ export default function About() {
 
       <section className="mx-auto max-w-7xl px-6 py-16 md:py-24">
         <div className="mb-10 max-w-2xl md:mb-12">
-          <h2 className="text-3xl font-semibold text-white md:text-4xl">What I work with</h2>
+          <h2 className="text-3xl font-semibold text-white md:text-4xl">
+            What I have experience in
+          </h2>
 
           <p className="mt-3 text-neutral-400">
-            Technologies and tools I use when designing, developing and deploying web applications.
+            I mainly focus on frontend development, as it’s where I have the most experience, but
+            I’m also open to other technologies.
           </p>
         </div>
 
