@@ -77,7 +77,8 @@ export default function Home() {
       </section>
       <section id="projekty" className="bg-[#020202] pt-12">
         <div className="mx-auto max-w-7xl px-6">
-          <h2 className="text-primary pb-12 text-3xl font-bold md:text-4xl">Výběr z projektů</h2>
+          <h2 className="text-primary mb-12 text-3xl font-bold md:text-4xl">Výběr z projektů</h2>
+
           <ProjectCard
             title="Osobní stránka"
             description="Tento projekt je mým nejnovějším dílem a má pro mě velkou osobní hodnotu. Největší výzvou byl samotný návrh stránky, ke kterému jsem se dostal až po několika iteracích a hledání správného směru."
