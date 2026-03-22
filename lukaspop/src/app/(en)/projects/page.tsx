@@ -93,7 +93,7 @@ export default function Projects() {
           imageAlt="Sheep Monopoly project"
           align="right"
           year="2024"
-          skills={["React"]}
+          skills={["React", "Figma"]}
           visitLink="#"
           locale="en"
           as="h2"

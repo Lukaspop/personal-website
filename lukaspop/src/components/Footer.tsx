@@ -93,11 +93,13 @@ export default function Footer() {
                 </a>
               </li>
 
-              <li>
-                <a href="tel:+420720285566" className="text-neutral-400 hover:text-white">
-                  +420 720 285 566
-                </a>
-              </li>
+              {locale === "cs" && (
+                <li>
+                  <a href="tel:+420720285566" className="text-neutral-400 hover:text-white">
+                    +420 720 285 566
+                  </a>
+                </li>
+              )}
 
               <li>
                 <a

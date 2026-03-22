@@ -93,7 +93,7 @@ export default function Projekty() {
           imageAlt="Sheep Monopoly projekt"
           align="right"
           year="2024"
-          skills={["React"]}
+          skills={["React", "Figma"]}
           visitLink="https://pslib-cz.github.io/2023-p3a-mpa-react-project-Lukypop"
           locale="cs"
           as="h2"
