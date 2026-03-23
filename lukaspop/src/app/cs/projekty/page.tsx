@@ -23,7 +23,7 @@ export default function Projekty() {
       <section className="max-w-7xl">
         <ProjectCard
           title="Osobní stránka"
-          description="Projekt, který se mě držel delší dobu a prošel několika kompletními redesigny, než dosáhl své finální podoby. Každá verze mě postupně posouvala blíž k výsledku, se kterým jsem dnes spokojený. Důraz je zde kladen na výkon a taky na SEO."
+          description="Projekt, který se mě držel delší dobu a prošel několika kompletními redesigny, než dosáhl své finální podoby. Každá verze mě postupně posouvala blíž k výsledku, se kterým jsem dnes spokojený. Důraz je zde kladen na výkon a také na SEO."
           imagePath="/private-images/personalWebsiteProject.jpg"
           imageAlt="Osobní stránka Lukaspop+"
           align="left"
@@ -36,7 +36,7 @@ export default function Projekty() {
 
         <ProjectCard
           title="Cutouts"
-          description=""
+          description="Projekt pro menší irskou kapelu, který mi byl nabídnut kolegou. Na začátku jsem měl k dispozici pouze jejich logo a krátký záznam z živého vystoupení, což z projektu udělalo zajímavou výzvu. Celý web i backgroundový artwork jsem proto navrhl na základě celkové atmosféry a dojmu. Artwork měl tak pozitivní ohlas, že z něj kapela do budoucna zvažuje vytvořit merch."
           imagePath="/private-images/cutoutsWebsiteProject.jpg"
           imageAlt="Cutouts web"
           align="right"
@@ -49,7 +49,7 @@ export default function Projekty() {
 
         <ProjectCard
           title="Pixel Dread"
-          description="Projekt zaměřený na SEO a redesign. Backend je kvalitní, ale vizuální stránka neodpovídá současným standardům, proto pracuji na jeho zlepšení."
+          description="Tento okolo 120h projekt má ten nejčistější backend a komunikaci s ním, byl zároveň mojí maturitní prací, bohužel jeho vizuální strana je velmi neúměrná k funkci, kterou předvádí."
           imagePath="/private-images/pixeldreadWebsiteProject.jpg"
           imageAlt="Pixel Dread web"
           align="left"
