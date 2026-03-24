@@ -36,15 +36,16 @@ export default function Home() {
           <h2 className="text-primary font-bold">Who am I?</h2>
 
           <p className="mt-6 max-w-4xl leading-relaxed text-neutral-400">
-            My name is Lukáš Pop and I focus on building modern web applications. I specialize in
-            combining thoughtful design with high-quality code to create solutions that are clear,
-            efficient, and easy to scale in the future.
+            I almost forgot to introduce myself. My name is Lukáš&nbsp;Pop, and I focus on building
+            websites and web applications — from the initial concept all the way to deployment. I
+            care deeply about performance and sustainability, while making sure the final result is
+            visually appealing.
           </p>
 
           <p className="mt-4 text-neutral-400">
-            If you'd like to learn more about me, click the link →
-            <a href="/en/about" className="text-primary ml-2 hover:underline">
-              More about me
+            If you’d like to learn more about me, you can read more here →
+            <a href="en/about" className="text-primary ml-2 hover:underline">
+              About me
             </a>
           </p>
         </div>
@@ -58,47 +59,47 @@ export default function Home() {
 
           <div className="grid gap-3 md:grid-cols-3">
             <ServiceCard
-              title="Web Development"
-              description="Modern web applications built with Next.js and TypeScript."
+              title="Custom Website"
+              description="I’ll guide you through the entire process — from design to deployment — and create a website that helps you or your brand stand out."
               icon={<Code size={20} color="var(--neon-blue)" />}
             />
 
             <ServiceCard
-              title="UI / UX"
-              description="Thoughtful design focused on user experience."
+              title="Web Application"
+              description="I build custom solutions that save you time and improve the user experience of your product or website."
               icon={<Palette size={20} color="var(--neon-red)" />}
             />
 
             <ServiceCard
-              title="Performance"
-              description="Optimization focused on speed and scalability."
+              title="SEO & Online Visibility"
+              description="I improve your search engine rankings, set up analytics, create Google Business profiles, and fix key issues on your website."
               icon={<Zap size={20} color="var(--neon-yellow)" />}
             />
           </div>
         </div>
       </section>
 
-      <section id="projects" className="bg-[#020202] pt-12">
+      <section id="projekty" className="bg-[#020202] pt-12">
         <div className="mx-auto max-w-7xl px-6">
-          <h2 className="text-primary pb-12 text-3xl font-bold md:text-4xl">Selected Projects</h2>
+          <h2 className="text-primary mb-24 text-3xl font-bold md:text-4xl">Selected Projects</h2>
 
           <ProjectCard
             title="Personal Website"
-            description="This project is my most recent work and holds great personal value for me. The biggest challenge was designing the website itself, which took several iterations before I found the right direction."
+            description="This project is my most recent work and holds strong personal value for me. The biggest challenge was the design itself, which I reached only after several iterations and exploring different directions."
             imagePath="/private-images/personalWebsiteProject.jpg"
             imageAlt="Screenshot of Lukaspop personal website"
             align="left"
             year="2026"
             skills={["Figma", "Next.js", "Tailwind", "SEO"]}
-            visitLink="/"
+            visitLink="/en"
             locale="en"
           />
 
           <ProjectCard
             title="Cutouts"
-            description="This website for the Irish band Cutouts was created based only on their logo, Instagram, and a recording of their live performance. From these materials, I created several Figma designs that eventually evolved into the final website. The artwork created for the site may also appear on the band's merchandise in the future."
+            description="This website for the Irish band Cutouts was created based on their logo, Instagram presence, and a recording of their live performance. From these inputs, I developed several design concepts in Figma, which gradually evolved into the final website. The artwork created for the site may also be used for their future merchandise."
             imagePath="/private-images/cutoutsWebsiteProject.jpg"
-            imageAlt="Screenshot of the Cutouts band website"
+            imageAlt="Screenshot of Cutouts band website"
             align="right"
             year="2025"
             skills={["Figma", "WordPress", "MailerLite"]}
@@ -108,12 +109,12 @@ export default function Home() {
 
           <ProjectCard
             title="Pixel Dread"
-            description="This project was my first encounter with SEO. It is a website for the mobile game Pixel Dread created by Jan S. Kostlán. The backend is very well designed, especially the instance system used for communication, but the visual design does not fully reflect the technical quality of the project. For that reason, I am preparing a redesign of the website along with improvements to several SEO elements. The project is also part of my graduation thesis."
+            description="This project was my first experience with SEO. It’s a website for the mobile game Pixel Dread by Jan S. Kostlán. The backend is very well structured, especially the instance-based communication system, but visually it doesn’t fully reflect its technical quality. That’s why I’m currently working on a redesign and SEO improvements. The project is also part of my graduation work."
             imagePath="/private-images/pixeldreadWebsiteProject.jpg"
-            imageAlt="Screenshot of the Pixel Dread website"
+            imageAlt="Screenshot of Pixel Dread website"
             align="left"
             year="2025"
-            skills={["ASP.NET", "React", "SQL", "SEO", "Google Analytics"]}
+            skills={["ASP.NET", "REST API", "React", "SQL", "SEO", "Google Analytics"]}
             visitLink="https://pixeldread.com"
             locale="en"
           />
