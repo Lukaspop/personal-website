@@ -25,7 +25,7 @@ export default function Projekty() {
           title="Osobní stránka"
           description="Projekt, který se mě držel delší dobu a prošel několika kompletními redesigny, než dosáhl své finální podoby. Každá verze mě postupně posouvala blíž k výsledku, se kterým jsem dnes spokojený. Důraz je zde kladen na výkon a také na SEO."
           imagePath="/private-images/personalWebsiteProject.jpg"
-          imageAlt="Osobní stránka Lukaspop+"
+          imageAlt="fotka Osobní stránky"
           align="left"
           year="2026"
           skills={["Figma", "Next.js", "Tailwind", "SEO"]}
@@ -49,7 +49,7 @@ export default function Projekty() {
 
         <ProjectCard
           title="Pixel Dread"
-          description="Tento okolo 120h projekt má ten nejčistější backend a komunikaci s ním, byl zároveň mojí maturitní prací, bohužel jeho vizuální strana je velmi neúměrná k funkci, kterou předvádí."
+          description="Tento projekt představuje CMS (Content Management System), kde je backend řešen velmi profesionálně a s důrazem na rozšiřitelnost. Bohužel je tato kvalitní funkčnost obalena velmi podprůměrným vizuálem. Do budoucna proto plánuji kompletní redesign, aby více než 100 hodin práce mělo i odpovídající, reprezentativní vzhled."
           imagePath="/private-images/pixeldreadWebsiteProject.jpg"
           imageAlt="Pixel Dread web"
           align="left"
@@ -62,7 +62,7 @@ export default function Projekty() {
 
         <ProjectCard
           title="Solar Panel Calculator"
-          description="Kalkulačka vytvořená na míru pro klienta. Navazuje na předchozí úspěšný projekt, tentokrát ve spolupráci se zahraničním týmem."
+          description="Moje druhá kalkulačka, vytvořená dle požadavků irského klienta. Projekt byl jednodušší, jelikož jsem mohl vycházet z předchozí kalkulačky, u které už jsem měl mnoho věcí dobře podchycených. Tento projekt vznikl také díky pozitivním ohlasům od jiného klienta (Pension Calculator)."
           imagePath="/private-images/solarpanelcalculatorProject.jpg"
           imageAlt="Solar calculator showcase"
           align="right"
@@ -75,7 +75,7 @@ export default function Projekty() {
 
         <ProjectCard
           title="Pension Calculator"
-          description="Můj poslední projekt ve firmě Digital Funnel během Erasmu. Zajišťoval jsem komunikaci s klientem, návrh řešení i samotnou implementaci a testování."
+          description="Můj poslední projekt ve firmě Digital Funnel během Erasmu. Nejdříve jsem musel pochopit, jak celý výpočet funguje, a následně navrhnout řešení. Poté jsem komunikoval s klientem a prezentoval mu fungování (např. nastavení proměnných ročních úroků, které jsou upravitelné v admin části). Součástí projektu byl také grafický návrh a jeho implementace."
           imagePath="/private-images/pensioncalculatorProject.jpg"
           imageAlt="Pension calculator showcase"
           align="left"
@@ -88,7 +88,7 @@ export default function Projekty() {
 
         <ProjectCard
           title="Sheep Monopoly"
-          description="Projekt je hotový, jen jej musím popsat textově. "
+          description="Toto je můj nejstarší prezentovatelný projekt. Jde o Monopoly, kde se místo měst obchoduje s ovcemi. Graficky je to opět méně povedená hra, ale naučil jsem se na ní hodně práce s Reactem."
           imagePath="/private-images/sheepmonopolyProject.jpg"
           imageAlt="Sheep Monopoly projekt"
           align="right"

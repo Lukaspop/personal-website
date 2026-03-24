@@ -14,6 +14,10 @@ interface ProjectCardProps {
   as?: "h2" | "h3" | "h4";
 }
 
+const fixCzechTypography = (text: string) => {
+  return text.replace(/\b([aiouksvz])\s+/gi, "$1\u00A0");
+};
+
 const ProjectCard: React.FC<ProjectCardProps> = ({
   title,
   year,
@@ -52,7 +56,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
         </div>
 
         <p className="mt-4 max-w-[420px] text-[15px] leading-[1.6] text-neutral-400">
-          {description}
+          {locale === "cs" ? fixCzechTypography(description) : description}
         </p>
 
         <div className="mt-6 flex flex-wrap gap-2">
