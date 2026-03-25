@@ -4,7 +4,7 @@ import ProjectCard from "@/components/ProjectCard";
 export const metadata = {
   title: "Projects",
   alternates: {
-    canonical: "https://lukaspop.com/en/projects",
+    canonical: "https://lukaspop.com/projects",
   },
 };
 

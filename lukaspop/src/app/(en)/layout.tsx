@@ -3,6 +3,7 @@ import Navbar from "@/components/Navbar";
 import type { Metadata } from "next";
 import Footer from "@/components/Footer";
 import { Outfit, Poppins } from "next/font/google";
+import CookieConsentComponent from "@/components/CookieConsentComponent";
 
 const outfit = Outfit({
   subsets: ["latin"],
@@ -38,6 +39,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html lang="en" className={`${outfit.variable} ${poppins.variable}`}>
       <body>
+        <CookieConsentComponent language="en" />
         <div className="pointer-events-none fixed top-0 right-0 left-0 z-[999]">
           <div className="pointer-events-auto">
             <Navbar />
