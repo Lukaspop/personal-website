@@ -11,13 +11,17 @@ type Props = {
   dashed?: boolean;
 };
 
+function fixCzechOrphans(text: string) {
+  return text.replace(/(^|\s)([A-Za-zÀ-ž])\s+/g, "$1$2\u00A0");
+}
+
 const TimelineCard = forwardRef<HTMLDivElement, Props>(
   ({ year, title, description, active, dashed }, dotRef) => {
     return (
       <div className="relative pl-16 md:pl-20">
         <div
           ref={dotRef}
-          className={`absolute top-3 left-[6px] z-10 h-4 w-4 rounded-full border transition-all duration-300 ease-out ${
+          className={`absolute top-1/2 left-[5px] z-10 h-4 w-4 -translate-y-1/2 rounded-full border transition-all duration-300 ease-out ${
             dashed
               ? "border-dashed border-neutral-500 bg-transparent"
               : active
@@ -55,7 +59,7 @@ const TimelineCard = forwardRef<HTMLDivElement, Props>(
               dashed ? "text-neutral-300" : "text-white"
             }`}
           >
-            {title}
+            {fixCzechOrphans(title)}
           </h3>
 
           <p
@@ -63,7 +67,7 @@ const TimelineCard = forwardRef<HTMLDivElement, Props>(
               dashed ? "text-neutral-500" : "text-neutral-400"
             }`}
           >
-            {description}
+            {fixCzechOrphans(description)}
           </p>
         </motion.div>
       </div>

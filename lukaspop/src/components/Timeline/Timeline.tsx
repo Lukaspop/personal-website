@@ -80,10 +80,7 @@ export function Timeline({ data, heading, subheading }: Props) {
   const beamOpacity = useTransform(smoothProgressPx, (value) => (value > 2 ? 1 : 0));
 
   return (
-    <section
-      ref={sectionRef}
-      className="relative mx-auto max-w-7xl pt-12 pl-6 md:pt-12 md:pb-6 lg:pb-24"
-    >
+    <section ref={sectionRef} className="relative mx-auto max-w-7xl pt-8 pb-24">
       <div className="grid gap-14 md:grid-cols-2 md:gap-24">
         <div className="h-fit md:sticky md:top-1/2 md:-translate-y-1/2">
           <h2 className="text-3xl font-bold text-white md:text-5xl">{heading}</h2>

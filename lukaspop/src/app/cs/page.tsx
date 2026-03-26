@@ -30,7 +30,7 @@ export default function Home() {
           </p>
         </div>
       </section>
-      <section id="who-am-i" className="bg-[#020202] py-24">
+      <section id="who-am-i" className="bg-[#020202] pt-24">
         <div className="mx-auto max-w-7xl px-6">
           <h2 className="text-primary font-bold">Kdo jsem?</h2>
 
@@ -51,7 +51,7 @@ export default function Home() {
           </p>
         </div>
       </section>
-      <section id="services" className="bg-[#020202] py-24">
+      <section id="services" className="bg-[#020202] pt-24">
         <div className="mx-auto max-w-7xl px-6">
           <header className="mb-12 max-w-2xl">
             <h2 className="text-primary text-3xl font-bold md:text-4xl">Nabízené služby</h2>
@@ -84,7 +84,7 @@ export default function Home() {
         <div className="mx-auto max-w-7xl px-6">
           <h2 className="text-primary mb-4 text-3xl font-bold md:text-4xl">Výběr z projektů</h2>
 
-          <p className="mb-24 max-w-4xl leading-relaxed text-neutral-400">
+          <p className="mb-16 max-w-4xl leading-relaxed text-neutral-400">
             Toto je jen malý výběr mé práce. Pokud vás zajímá více projektů a detailů, navštivte →
             <a href="/cs/projekty" className="text-primary ml-2 hover:underline">
               všechny projekty

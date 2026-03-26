@@ -34,7 +34,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
 
   return (
     <article
-      className={`grid items-center gap-14 pb-20 lg:grid-cols-2 ${
+      className={`grid items-center gap-12 pb-24 lg:grid-cols-2 ${
         align === "right" ? "lg:[&>*:first-child]:order-2" : ""
       }`}
     >

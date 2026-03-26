@@ -71,7 +71,7 @@ export default function OMne() {
 
   return (
     <PageWrapper>
-      <section className="mx-auto grid min-h-[calc(100vh-64px)] max-w-7xl items-center gap-14 px-6 py-16 lg:grid-cols-2">
+      <section className="mx-auto grid min-h-[calc(100vh-64px)] max-w-7xl items-center gap-14 py-16 lg:grid-cols-2">
         <div className="max-w-2xl space-y-6">
           <h1 className="text-4xl font-bold tracking-tight text-white md:text-5xl lg:text-6xl">
             O mně
@@ -124,7 +124,7 @@ export default function OMne() {
         </div>
       </section>
 
-      <section className="mx-auto max-w-7xl px-6 py-16 md:py-24">
+      <section className="mx-auto max-w-7xl py-16 md:py-24">
         <div className="mb-10 max-w-2xl md:mb-12">
           <h2 className="text-3xl font-semibold text-white md:text-4xl">V čem mám zkušenosti</h2>
 
