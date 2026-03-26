@@ -115,6 +115,7 @@ export default function OMne() {
                 src="/private-images/ImageOfMyself.webp"
                 alt="Lukas Pop"
                 fill
+                sizes="(max-width: 1024px) 100vw, 50vw"
                 className="object-cover"
                 priority
               />

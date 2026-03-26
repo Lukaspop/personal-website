@@ -14,8 +14,8 @@ export default function Projekty() {
           <h1 className="text-4xl font-bold text-white md:text-5xl">Projekty</h1>
 
           <p className="text-lg text-neutral-400">
-            Toto jsou mé publikované a dokončené projekty, seřazené od nejnovějších. Ukazují, jak se
-            moje práce v průběhu času posunula.
+            Toto jsou mé publikované a dokončené projekty, seřazené od nejnovějších. Ukazují hlavně
+            to, jak se moje práce v průběhu času posunula.
           </p>
         </div>
       </section>

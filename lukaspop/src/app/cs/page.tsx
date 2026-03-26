@@ -30,7 +30,7 @@ export default function Home() {
           </p>
         </div>
       </section>
-      <section id="who-am-i" className="bg-[#020202] py-12">
+      <section id="who-am-i" className="bg-[#020202] py-24">
         <div className="mx-auto max-w-7xl px-6">
           <h2 className="text-primary font-bold">Kdo jsem?</h2>
 
@@ -51,33 +51,45 @@ export default function Home() {
           </p>
         </div>
       </section>
-      <section id="services" className="bg-[#020202] py-12">
+      <section id="services" className="bg-[#020202] py-24">
         <div className="mx-auto max-w-7xl px-6">
           <header className="mb-12 max-w-2xl">
             <h2 className="text-primary text-3xl font-bold md:text-4xl">Nabízené služby</h2>
           </header>
-          <div className="grid gap-3 md:grid-cols-3">
+          <div className="grid gap-6 md:grid-cols-3">
             <ServiceCard
               title="Prezentační web na míru"
               description="Provedu vás celým procesem od samotného návrhu po nasazení a vytvořím web, který pomůže zviditelnit vás či vaši značku."
-              icon={<Code size={20} color="var(--neon-blue)" />}
+              icon={<Code size={20} />}
+              iconColor="#6569f0"
             />
+
             <ServiceCard
               title="Webová aplikace"
               description="Vytvořím řešení na míru, které vám ušetří čas a zlepší uživatelský zážitek na vašem webu."
-              icon={<Palette size={20} color="var(--neon-red)" />}
+              icon={<Palette size={20} />}
+              iconColor="#fa2d37"
             />
+
             <ServiceCard
               title="SEO & Online viditelnost"
               description="Zlepším vaši pozici ve vyhledávačích, nastavím Google Analytics, vytvořím Google Business a odstraním nedostatky vašeho webu."
-              icon={<Zap size={20} color="var(--neon-yellow)" />}
+              icon={<Zap size={20} />}
+              iconColor="#f59f1d"
             />
           </div>
         </div>
       </section>
-      <section id="projekty" className="bg-[#020202] pt-12">
+      <section id="projekty" className="bg-[#020202] pt-24">
         <div className="mx-auto max-w-7xl px-6">
-          <h2 className="text-primary mb-24 text-3xl font-bold md:text-4xl">Výběr z projektů</h2>
+          <h2 className="text-primary mb-4 text-3xl font-bold md:text-4xl">Výběr z projektů</h2>
+
+          <p className="mb-24 max-w-4xl leading-relaxed text-neutral-400">
+            Toto je jen malý výběr mé práce. Pokud vás zajímá více projektů a detailů, navštivte →
+            <a href="/cs/projekty" className="text-primary ml-2 hover:underline">
+              všechny projekty
+            </a>
+          </p>
           <ProjectCard
             title="Osobní stránka"
             description="Tento projekt je mým nejnovějším dílem a má pro mě velkou osobní hodnotu. Největší výzvou byl samotný návrh stránky, ke kterému jsem se dostal až po několika iteracích a hledání správného směru."
