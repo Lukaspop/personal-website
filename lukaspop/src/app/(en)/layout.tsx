@@ -24,9 +24,6 @@ export const metadata: Metadata = {
     index: false,
     follow: false,
   },
-  icons: {
-    apple: "/apple-touch-icon.png",
-  },
 
   title: {
     default: "Lukaspop | Websites where aesthetics meet performance",
