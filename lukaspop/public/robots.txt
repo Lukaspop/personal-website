@@ -1,6 +1,9 @@
+# *
 User-agent: *
 Allow: /
 
-Disallow: /private-images/
+# Host
+Host: https://lukaspop.com
 
-# Sitemap: https://example.com/sitemap.xml
+# Sitemaps
+Sitemap: https://lukaspop.com/sitemap.xml

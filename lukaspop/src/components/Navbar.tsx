@@ -103,6 +103,7 @@ export default function Navbar() {
               width={36}
               height={36}
               className="h-full w-full object-cover"
+              loading="lazy"
             />
           </button>
         </nav>

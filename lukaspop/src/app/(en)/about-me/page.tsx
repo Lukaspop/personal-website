@@ -125,6 +125,7 @@ export default function About() {
                   className="object-cover"
                   sizes="(max-width: 1024px) 100vw, 50vw"
                   priority
+                  loading="lazy"
                 />
               </div>
             </div>

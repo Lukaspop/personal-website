@@ -83,6 +83,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
               src={imagePath}
               alt={imageAlt}
               className="aspect-video w-full rounded-xl object-cover transition duration-500 select-none group-hover:scale-[1.02]"
+              loading="lazy"
             />
           </div>
         </a>
