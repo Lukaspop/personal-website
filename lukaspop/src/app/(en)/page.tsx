@@ -31,61 +31,74 @@ export default function Home() {
         </div>
       </section>
 
-      <section id="who-am-i" className="bg-[#020202] py-12">
+      <section id="who-am-i" className="bg-[#020202] pt-24">
         <div className="mx-auto max-w-7xl px-6">
           <h2 className="text-primary font-bold">Who am I?</h2>
 
           <p className="mt-6 max-w-4xl leading-relaxed text-neutral-400">
-            I almost forgot to introduce myself. My name is Lukáš&nbsp;Pop, and I focus on building
-            websites and web applications — from the initial concept all the way to deployment. I
-            care deeply about performance and sustainability, while making sure the final result is
-            visually appealing.
+            I almost forgot to introduce myself. My name is Lukáš&nbsp;Pop and I focus on building
+            websites and web applications from the initial concept to deployment. I care mainly
+            about performance and sustainability, while trying to wrap this combination in a
+            visually appealing design.
           </p>
 
+          <p></p>
+
           <p className="mt-4 text-neutral-400">
-            If you’d like to learn more about me, you can read more here →
+            If you’d like to learn more about me in detail, read more here →
             <a href="en/about" className="text-primary ml-2 hover:underline">
-              About me
+              More about me
             </a>
           </p>
         </div>
       </section>
 
-      <section id="services" className="bg-[#020202] py-12">
+      <section id="services" className="bg-[#020202] pt-24">
         <div className="mx-auto max-w-7xl px-6">
           <header className="mb-12 max-w-2xl">
             <h2 className="text-primary text-3xl font-bold md:text-4xl">Services</h2>
           </header>
 
-          <div className="grid gap-3 md:grid-cols-3">
+          <div className="grid gap-6 md:grid-cols-3">
             <ServiceCard
-              title="Custom Website"
-              description="I’ll guide you through the entire process — from design to deployment — and create a website that helps you or your brand stand out."
-              icon={<Code size={20} color="var(--neon-blue)" />}
+              title="Custom Presentation Website"
+              description="I will guide you through the entire process from the initial design to deployment and create a website that helps present you or your brand."
+              icon={<Code size={20} />}
+              iconColor="#6569f0"
             />
 
             <ServiceCard
               title="Web Application"
-              description="I build custom solutions that save you time and improve the user experience of your product or website."
-              icon={<Palette size={20} color="var(--neon-red)" />}
+              description="I will create a custom solution that saves you time and improves the user experience on your website."
+              icon={<Palette size={20} />}
+              iconColor="#fa2d37"
             />
 
             <ServiceCard
               title="SEO & Online Visibility"
-              description="I improve your search engine rankings, set up analytics, create Google Business profiles, and fix key issues on your website."
-              icon={<Zap size={20} color="var(--neon-yellow)" />}
+              description="I will improve your search engine rankings, set up Google Analytics, create a Google Business profile and fix issues on your website."
+              icon={<Zap size={20} />}
+              iconColor="#f59f1d"
             />
           </div>
         </div>
       </section>
 
-      <section id="projekty" className="bg-[#020202] pt-12">
+      <section id="projekty" className="bg-[#020202] pt-24">
         <div className="mx-auto max-w-7xl px-6">
-          <h2 className="text-primary mb-24 text-3xl font-bold md:text-4xl">Selected Projects</h2>
+          <h2 className="text-primary mb-4 text-3xl font-bold md:text-4xl">Selected Projects</h2>
+
+          <p className="mb-16 max-w-4xl leading-relaxed text-neutral-400">
+            This is only a small selection of my work. If you’re interested in more projects and
+            details, visit →
+            <a href="/en/projects" className="text-primary ml-2 hover:underline">
+              all projects
+            </a>
+          </p>
 
           <ProjectCard
             title="Personal Website"
-            description="This project is my most recent work and holds strong personal value for me. The biggest challenge was the design itself, which I reached only after several iterations and exploring different directions."
+            description="This project is my latest work and has strong personal value for me. The biggest challenge was the design itself, which I reached only after several iterations and searching for the right direction."
             imagePath="/private-images/personalWebsiteProject.jpg"
             imageAlt="Screenshot of Lukaspop personal website"
             align="left"
@@ -97,7 +110,7 @@ export default function Home() {
 
           <ProjectCard
             title="Cutouts"
-            description="This website for the Irish band Cutouts was created based on their logo, Instagram presence, and a recording of their live performance. From these inputs, I developed several design concepts in Figma, which gradually evolved into the final website. The artwork created for the site may also be used for their future merchandise."
+            description="The website for the Irish band Cutouts was created based on their logo, Instagram and a recording of their live performance. From these materials, I created several designs in Figma, which gradually evolved into the final version of the website. The artwork created for the site may also appear on their future merchandise."
             imagePath="/private-images/cutoutsWebsiteProject.jpg"
             imageAlt="Screenshot of Cutouts band website"
             align="right"
@@ -109,7 +122,7 @@ export default function Home() {
 
           <ProjectCard
             title="Pixel Dread"
-            description="This project was my first experience with SEO. It’s a website for the mobile game Pixel Dread by Jan S. Kostlán. The backend is very well structured, especially the instance-based communication system, but visually it doesn’t fully reflect its technical quality. That’s why I’m currently working on a redesign and SEO improvements. The project is also part of my graduation work."
+            description="In this project I encountered SEO for the first time. It is a website for the mobile application Pixel Dread by Jan S. Kostlán. The backend of the project is very high quality, especially the instance communication system, but visually the website does not match its technical level. That is why I am preparing a redesign and adjusting some SEO elements. The project is also part of my graduation work."
             imagePath="/private-images/pixeldreadWebsiteProject.jpg"
             imageAlt="Screenshot of Pixel Dread website"
             align="left"
