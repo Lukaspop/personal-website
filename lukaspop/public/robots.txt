@@ -1,9 +1,4 @@
-# *
 User-agent: *
-Allow: /
-
-# Host
-Host: https://lukaspop.com
 
 # Sitemaps
 Sitemap: https://lukaspop.com/sitemap.xml

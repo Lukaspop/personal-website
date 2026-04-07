@@ -40,6 +40,20 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     <html lang="cs" className={`${outfit.variable} ${poppins.variable}`}>
       <body>
         <Head>
+          {/* Preload fonts */}
+          <link
+            rel="preload"
+            href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap"
+            as="font"
+            type="font/woff2"
+          />
+          <link
+            rel="preload"
+            href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&display=swap"
+            as="font"
+            type="font/woff2"
+          />
+
           <meta
             property="og:title"
             content="Lukaspop+++ | Webové stránky, u kterých se estetika setkává s výkonem"
