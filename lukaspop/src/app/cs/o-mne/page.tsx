@@ -2,13 +2,17 @@ import PageWrapper from "@/components/PageWrapper";
 import { Timeline } from "@/components/Timeline/Timeline";
 import Image from "next/image";
 import TechStack from "@/components/Techstack";
+import Head from "next/head";
 
 export const metadata = {
   title: "O mně",
+  description:
+    "My name is Lukas Pop, and this page outlines my experiences and significant steps that have brought me to where I am now.",
   alternates: {
     canonical: "https://lukaspop.com/cs/o-mne",
   },
 };
+
 export default function OMne() {
   const data = [
     {
@@ -70,78 +74,85 @@ export default function OMne() {
   ];
 
   return (
-    <PageWrapper>
-      <section className="mx-auto grid min-h-[calc(100vh-64px)] max-w-7xl items-center gap-14 py-16 lg:grid-cols-2">
-        <div className="max-w-2xl space-y-6">
-          <h1 className="text-4xl font-bold tracking-tight text-white md:text-5xl lg:text-6xl">
-            O mně
-          </h1>
+    <>
+      <Head>
+        <link rel="alternate" href="https://lukaspop.com/cs/o-mne" hrefLang="cs" />
+        <link rel="alternate" href="https://lukaspop.com/about-me" hrefLang="en" />
+        <link rel="alternate" href="https://lukaspop.com/about-me" hrefLang="x-default" />
+      </Head>
+      <PageWrapper>
+        <section className="mx-auto grid min-h-[calc(100vh-64px)] max-w-7xl items-center gap-14 py-16 lg:grid-cols-2">
+          <div className="max-w-2xl space-y-6">
+            <h1 className="text-4xl font-bold tracking-tight text-white md:text-5xl lg:text-6xl">
+              O mně
+            </h1>
 
-          <p className="text-lg leading-relaxed text-neutral-300">
-            Ahoj, jmenuji se Lukáš a na této stránce najdete přehled mých zkušeností, toho, čemu se
-            věnuji, a co mě přivedlo k tvorbě webů.
-          </p>
+            <p className="text-lg leading-relaxed text-neutral-300">
+              Ahoj, jmenuji se Lukáš a na této stránce najdete přehled mých zkušeností, toho, čemu
+              se věnuji, a co mě přivedlo k tvorbě webů.
+            </p>
 
-          <p className="leading-relaxed text-neutral-400">
-            Weby jsou pro mě svým způsobem formou umění, která kromě své vizuální stránky napomáhá
-            značkám růst a oslovovat nové zákazníky.
-          </p>
+            <p className="leading-relaxed text-neutral-400">
+              Weby jsou pro mě svým způsobem formou umění, která kromě své vizuální stránky napomáhá
+              značkám růst a oslovovat nové zákazníky.
+            </p>
 
-          <div className="grid gap-4 pt-4 sm:grid-cols-2">
-            <div className="rounded-xl border border-white/10 bg-white/[0.03] p-5">
-              <p className="text-xs tracking-wider text-neutral-500 uppercase">Zaměření</p>
+            <div className="grid gap-4 pt-4 sm:grid-cols-2">
+              <div className="rounded-xl border border-white/10 bg-white/[0.03] p-5">
+                <p className="text-xs tracking-wider text-neutral-500 uppercase">Zaměření</p>
 
-              <p className="mt-2 text-sm leading-relaxed text-neutral-300">
-                Frontend a webový vývoj
-              </p>
-            </div>
+                <p className="mt-2 text-sm leading-relaxed text-neutral-300">
+                  Frontend a webový vývoj
+                </p>
+              </div>
 
-            <div className="rounded-xl border border-white/10 bg-white/[0.03] p-5">
-              <p className="text-xs tracking-wider text-neutral-500 uppercase">Mimo tech</p>
+              <div className="rounded-xl border border-white/10 bg-white/[0.03] p-5">
+                <p className="text-xs tracking-wider text-neutral-500 uppercase">Mimo tech</p>
 
-              <p className="mt-2 text-sm leading-relaxed text-neutral-300">
-                Fitness, budoucí osobní trenér
-              </p>
-            </div>
-          </div>
-        </div>
-
-        <div className="flex justify-center lg:justify-end">
-          <div className="relative">
-            <div className="absolute inset-0 scale-110 rounded-full bg-gradient-to-tr from-pink-500/20 via-purple-500/10 to-blue-500/20 blur-3xl" />
-
-            <div className="relative h-[240px] w-[240px] overflow-hidden rounded-full border border-white/10 sm:h-[300px] sm:w-[300px] lg:h-[360px] lg:w-[360px]">
-              <Image
-                src="/private-images/ImageOfMyself.webp"
-                alt="Lukas Pop"
-                fill
-                sizes="(max-width: 1024px) 100vw, 50vw"
-                className="object-cover"
-                priority
-              />
+                <p className="mt-2 text-sm leading-relaxed text-neutral-300">
+                  Fitness, budoucí osobní trenér
+                </p>
+              </div>
             </div>
           </div>
-        </div>
-      </section>
 
-      <section className="mx-auto max-w-7xl py-16 md:py-24">
-        <div className="mb-10 max-w-2xl md:mb-12">
-          <h2 className="text-3xl font-semibold text-white md:text-4xl">V čem mám zkušenosti</h2>
+          <div className="flex justify-center lg:justify-end">
+            <div className="relative">
+              <div className="absolute inset-0 scale-110 rounded-full bg-gradient-to-tr from-pink-500/20 via-purple-500/10 to-blue-500/20 blur-3xl" />
 
-          <p className="mt-3 text-neutral-400">
-            Nejradši se zabývám frontendovým vývojem, protože v něm mám nejvíce zkušeností, ale
-            nebráním se ani jiným technologiím.
-          </p>
-        </div>
+              <div className="relative h-[240px] w-[240px] overflow-hidden rounded-full border border-white/10 sm:h-[300px] sm:w-[300px] lg:h-[360px] lg:w-[360px]">
+                <Image
+                  src="/private-images/ImageOfMyself.webp"
+                  alt="Lukas Pop"
+                  fill
+                  sizes="(max-width: 1024px) 100vw, 50vw"
+                  className="object-cover"
+                  priority
+                />
+              </div>
+            </div>
+          </div>
+        </section>
 
-        <TechStack />
-      </section>
+        <section className="mx-auto max-w-7xl py-16 md:py-24">
+          <div className="mb-10 max-w-2xl md:mb-12">
+            <h2 className="text-3xl font-semibold text-white md:text-4xl">V čem mám zkušenosti</h2>
 
-      <Timeline
-        data={data}
-        heading="Můj příběh"
-        subheading="Cesta, která mě přivedla až tam, kde teď jsem."
-      />
-    </PageWrapper>
+            <p className="mt-3 text-neutral-400">
+              Nejradši se zabývám frontendovým vývojem, protože v něm mám nejvíce zkušeností, ale
+              nebráním se ani jiným technologiím.
+            </p>
+          </div>
+
+          <TechStack />
+        </section>
+
+        <Timeline
+          data={data}
+          heading="Můj příběh"
+          subheading="Cesta, která mě přivedla až tam, kde teď jsem."
+        />
+      </PageWrapper>
+    </>
   );
 }

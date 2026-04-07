@@ -2,6 +2,7 @@ import PageWrapper from "@/components/PageWrapper";
 import { Timeline } from "@/components/Timeline/Timeline";
 import Image from "next/image";
 import TechStack from "@/components/Techstack";
+import Head from "next/head";
 
 export const metadata = {
   title: "About me",
@@ -70,80 +71,87 @@ export default function About() {
   ];
 
   return (
-    <PageWrapper>
-      <section className="mx-auto grid min-h-[calc(100vh-64px)] max-w-7xl items-center gap-14 px-6 py-16 lg:grid-cols-2">
-        <div className="max-w-2xl space-y-6">
-          <h1 className="text-4xl font-bold tracking-tight text-white md:text-5xl lg:text-6xl">
-            About me
-          </h1>
+    <>
+      <Head>
+        <link rel="alternate" href="https://lukaspop.com/cs/o-mne" hrefLang="cs" />
+        <link rel="alternate" href="https://lukaspop.com/about-me" hrefLang="en" />
+        <link rel="alternate" href="https://lukaspop.com/about-me" hrefLang="x-default" />
+      </Head>
+      <PageWrapper>
+        <section className="grid min-h-[calc(100vh-64px)] items-center gap-14 py-16 lg:grid-cols-2">
+          <div className="max-w-2xl space-y-6">
+            <h1 className="text-4xl font-bold tracking-tight text-white md:text-5xl lg:text-6xl">
+              About me
+            </h1>
 
-          <p className="text-lg leading-relaxed text-neutral-300">
-            Hi, my name is Lukas and on this page you can find an overview of my experience, what I
-            do, and what led me to building websites.
-          </p>
+            <p className="text-lg leading-relaxed text-neutral-300">
+              Hi, my name is Lukas and on this page, you can find an overview of my experience, what
+              I do, and what led me to building websites.
+            </p>
 
-          <p className="leading-relaxed text-neutral-400">
-            I see websites as a form of modern art that, beyond their visual side, help brands grow
-            and reach new customers.
-          </p>
+            <p className="leading-relaxed text-neutral-400">
+              I see websites as a form of modern art that, beyond their visual side, help brands
+              grow and reach new customers.
+            </p>
 
-          <div className="grid gap-4 pt-4 sm:grid-cols-2">
-            <div className="rounded-xl border border-white/10 bg-white/[0.03] p-5">
-              <p className="text-xs tracking-wider text-neutral-500 uppercase">Focus</p>
+            <div className="grid gap-4 pt-4 sm:grid-cols-2">
+              <div className="rounded-xl border border-white/10 bg-white/[0.03] p-5">
+                <p className="text-xs tracking-wider text-neutral-500 uppercase">Focus</p>
 
-              <p className="mt-2 text-sm leading-relaxed text-neutral-300">
-                Frontend and web development
-              </p>
-            </div>
+                <p className="mt-2 text-sm leading-relaxed text-neutral-300">
+                  Frontend and web development
+                </p>
+              </div>
 
-            <div className="rounded-xl border border-white/10 bg-white/[0.03] p-5">
-              <p className="text-xs tracking-wider text-neutral-500 uppercase">Outside tech</p>
+              <div className="rounded-xl border border-white/10 bg-white/[0.03] p-5">
+                <p className="text-xs tracking-wider text-neutral-500 uppercase">Outside tech</p>
 
-              <p className="mt-2 text-sm leading-relaxed text-neutral-300">
-                Fitness, future personal trainer
-              </p>
-            </div>
-          </div>
-        </div>
-
-        <div className="flex justify-center lg:justify-end">
-          <div className="relative">
-            <div className="absolute inset-0 scale-110 rounded-full bg-gradient-to-tr from-pink-500/20 via-purple-500/10 to-blue-500/20 blur-3xl" />
-
-            <div className="relative h-[240px] w-[240px] overflow-hidden rounded-full border border-white/10 sm:h-[300px] sm:w-[300px] lg:h-[360px] lg:w-[360px]">
-              <Image
-                src="/private-images/ImageOfMyself.webp"
-                alt="Lukas Pop"
-                fill
-                className="object-cover"
-                sizes="(max-width: 1024px) 100vw, 50vw"
-                priority
-              />
+                <p className="mt-2 text-sm leading-relaxed text-neutral-300">
+                  Fitness, future personal trainer
+                </p>
+              </div>
             </div>
           </div>
-        </div>
-      </section>
 
-      <section className="mx-auto max-w-7xl px-6 py-16 md:py-24">
-        <div className="mb-10 max-w-2xl md:mb-12">
-          <h2 className="text-3xl font-semibold text-white md:text-4xl">
-            What I have experience in
-          </h2>
+          <div className="flex justify-center lg:justify-end">
+            <div className="relative">
+              <div className="absolute inset-0 scale-110 rounded-full bg-gradient-to-tr from-pink-500/20 via-purple-500/10 to-blue-500/20 blur-3xl" />
 
-          <p className="mt-3 text-neutral-400">
-            I mainly focus on frontend development, as it’s where I have the most experience, but
-            I’m also open to other technologies.
-          </p>
-        </div>
+              <div className="relative h-[240px] w-[240px] overflow-hidden rounded-full border border-white/10 sm:h-[300px] sm:w-[300px] lg:h-[360px] lg:w-[360px]">
+                <Image
+                  src="/private-images/ImageOfMyself.webp"
+                  alt="Lukas Pop"
+                  fill
+                  className="object-cover"
+                  sizes="(max-width: 1024px) 100vw, 50vw"
+                  priority
+                />
+              </div>
+            </div>
+          </div>
+        </section>
 
-        <TechStack />
-      </section>
+        <section className="mx-auto max-w-7xl px-6 py-16 md:py-24">
+          <div className="mb-10 max-w-2xl md:mb-12">
+            <h2 className="text-3xl font-semibold text-white md:text-4xl">
+              What I have experience in
+            </h2>
 
-      <Timeline
-        data={data}
-        heading="My journey"
-        subheading="The path that brought me where I am today."
-      />
-    </PageWrapper>
+            <p className="mt-3 text-neutral-400">
+              I mainly focus on frontend development, as it’s where I have the most experience, but
+              I’m also open to other technologies.
+            </p>
+          </div>
+
+          <TechStack />
+        </section>
+
+        <Timeline
+          data={data}
+          heading="My journey"
+          subheading="The path that brought me where I am today."
+        />
+      </PageWrapper>
+    </>
   );
 }

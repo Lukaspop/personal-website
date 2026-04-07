@@ -6,6 +6,8 @@ export const routePairs = [
   { en: "/projects/pixeldread", cz: "/cs/projekty/pixeldread" },
   { en: "/projects/pension-calculator", cz: "/cs/projekty/pension-calculator" },
   { en: "/projects/sheep-monopoly", cz: "/cs/projekty/sheep-monopoly" },
+  { en: "/cookies", cz: "/cs/cookies" },
+  { en: "/privacy-policy", cz: "/cs/privacy-policy" },
 ] as const;
 
 export function toCs(path: string): string {

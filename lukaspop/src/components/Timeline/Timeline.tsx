@@ -81,6 +81,7 @@ export function Timeline({ data, heading, subheading }: Props) {
 
   return (
     <section ref={sectionRef} className="relative mx-auto max-w-7xl pt-8 pb-24">
+      {/* This container needs the 'relative' position */}
       <div className="grid gap-14 md:grid-cols-2 md:gap-24">
         <div className="h-fit md:sticky md:top-1/2 md:-translate-y-1/2">
           <h2 className="text-3xl font-bold text-white md:text-5xl">{heading}</h2>
