@@ -1,5 +1,6 @@
 import React from "react";
 import { ArrowUpRight } from "lucide-react";
+import Image from "next/image";
 
 interface ProjectCardProps {
   title: string;
@@ -79,10 +80,13 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
           className="group w-full max-w-[760px] cursor-pointer"
         >
           <div className="overflow-hidden rounded-3xl border border-white/10 bg-neutral-900 p-4 transition-transform duration-500 group-hover:border-white/20">
-            <img
+            <Image
               src={imagePath}
               alt={imageAlt}
               className="aspect-video w-full rounded-xl object-cover transition duration-500 select-none group-hover:scale-[1.02]"
+              layout="responsive"
+              width={760}
+              height={426}  // Adjust the width and height as needed for your aspect ratio
               loading="lazy"
             />
           </div>
