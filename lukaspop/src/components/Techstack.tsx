@@ -1,27 +1,10 @@
 "use client";
+import React from "react";
+import { Suspense } from "react"; 
+import { Html5Original, Css3Original, SassOriginal, TailwindcssOriginal, NextjsOriginal, DotnetcoreOriginal, CsharpOriginal, NodejsOriginal, PostgresqlOriginal, MysqlOriginal, PrismaOriginal, GitOriginal, DockerOriginal, FigmaOriginal, ReactOriginal, JavascriptOriginal, PhpOriginal, WordpressOriginal, TypescriptOriginal, PythonOriginal } from "devicons-react";
 
-import {
-  Html5Original,
-  Css3Original,
-  SassOriginal,
-  TailwindcssOriginal,
-  NextjsOriginal,
-  DotnetcoreOriginal,
-  CsharpOriginal,
-  NodejsOriginal,
-  PostgresqlOriginal,
-  MysqlOriginal,
-  PrismaOriginal,
-  GitOriginal,
-  DockerOriginal,
-  FigmaOriginal,
-  ReactOriginal,
-  JavascriptOriginal,
-  PhpOriginal,
-  WordpressOriginal,
-  TypescriptOriginal,
-  PythonOriginal,
-} from "devicons-react";
+// Lazy load the TechStack component
+const TechStack = React.lazy(() => import("@/components/Techstack"));
 
 type StackItem = {
   icon: React.ComponentType<{ size?: string | number }>;
@@ -86,22 +69,25 @@ function TechPill({ item }: { item: StackItem }) {
   );
 }
 
-export default function TechStack() {
+export default function TechStackPage() {
   return (
     <div className="mx-auto max-w-7xl space-y-10">
-      {groups.map((group) => (
-        <section key={group.title} className="space-y-4">
-          <h3 className="text-sm font-medium tracking-[0.18em] text-neutral-500 uppercase">
-            {group.title}
-          </h3>
+      {/* Wrap the TechStack with Suspense to show loading while it's lazy-loaded */}
+      <Suspense fallback={<div>Loading Tech Stack...</div>}>
+        {groups.map((group) => (
+          <section key={group.title} className="space-y-4">
+            <h3 className="text-sm font-medium tracking-[0.18em] text-neutral-500 uppercase">
+              {group.title}
+            </h3>
 
-          <div className="grid grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5">
-            {group.items.map((item) => (
-              <TechPill key={item.name} item={item} />
-            ))}
-          </div>
-        </section>
-      ))}
+            <div className="grid grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5">
+              {group.items.map((item) => (
+                <TechPill key={item.name} item={item} />
+              ))}
+            </div>
+          </section>
+        ))}
+      </Suspense>
     </div>
   );
 }

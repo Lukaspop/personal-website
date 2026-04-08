@@ -1,6 +1,9 @@
 import PageWrapper from "@/components/PageWrapper";
-import ProjectCard from "@/components/ProjectCard";
+import React from "react";
 import Head from "next/head";
+import { Suspense } from "react";
+const ProjectCard = React.lazy(() => import("@/components/ProjectCard"));
+
 export const metadata = {
   title: "Projekty",
   description:
@@ -30,6 +33,7 @@ export default function Projekty() {
         </section>
 
         <section className="max-w-7xl">
+          <Suspense fallback={<div>Načítání projektů...</div>}>
           <ProjectCard
             title="Osobní stránka"
             description="Projekt, který se mě držel delší dobu a prošel několika kompletními redesigny, než dosáhl své finální podoby. Každá verze mě postupně posouvala blíž k výsledku, se kterým jsem dnes spokojený. Důraz je zde kladen na výkon a také na SEO."
@@ -107,6 +111,7 @@ export default function Projekty() {
             locale="cs"
             as="h2"
           />
+          </Suspense>
         </section>
       </PageWrapper>
     </>

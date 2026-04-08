@@ -1,8 +1,10 @@
+import { Suspense } from "react"; // Import Suspense for lazy loading
 import PageWrapper from "@/components/PageWrapper";
-import { Timeline } from "@/components/Timeline/Timeline";
-import Image from "next/image";
-import TechStack from "@/components/Techstack";
 import Head from "next/head";
+import React from "react";
+const Timeline = React.lazy(() => import("@/components/Timeline/Timeline"));
+const TechStack = React.lazy(() => import("@/components/Techstack"));
+const Image = React.lazy(() => import("next/image"));
 
 export const metadata = {
   title: "About me",
@@ -118,14 +120,17 @@ export default function About() {
               <div className="absolute inset-0 scale-110 rounded-full bg-gradient-to-tr from-pink-500/20 via-purple-500/10 to-blue-500/20 blur-3xl" />
 
               <div className="relative h-[240px] w-[240px] overflow-hidden rounded-full border border-white/10 sm:h-[300px] sm:w-[300px] lg:h-[360px] lg:w-[360px]">
-                <Image
-                  src="/private-images/ImageOfMyself.webp"
-                  alt="Lukas Pop"
-                  fill
-                  className="object-cover"
-                  sizes="(max-width: 1024px) 100vw, 50vw"
-                  priority
-                />
+                {/* Use Suspense for the Image component */}
+                <Suspense fallback={<div>Loading Image...</div>}>
+                  <Image
+                    src="/private-images/ImageOfMyself.webp"
+                    alt="Lukas Pop"
+                    fill
+                    className="object-cover"
+                    sizes="(max-width: 1024px) 100vw, 50vw"
+                    priority
+                  />
+                </Suspense>
               </div>
             </div>
           </div>
@@ -143,14 +148,18 @@ export default function About() {
             </p>
           </div>
 
-          <TechStack />
+          <Suspense fallback={<div>Loading Tech Stack...</div>}>
+            <TechStack />
+          </Suspense>
         </section>
 
-        <Timeline
-          data={data}
-          heading="My journey"
-          subheading="The path that brought me where I am today."
-        />
+        <Suspense fallback={<div>Loading Timeline...</div>}>
+          <Timeline
+            data={data}
+            heading="My journey"
+            subheading="The path that brought me where I am today."
+          />
+        </Suspense>
       </PageWrapper>
     </>
   );

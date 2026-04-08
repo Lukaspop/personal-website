@@ -1,8 +1,12 @@
 import PageWrapper from "@/components/PageWrapper";
-import { Timeline } from "@/components/Timeline/Timeline";
-import Image from "next/image";
-import TechStack from "@/components/Techstack";
+import { Suspense } from "react";
+import React from "react";
 import Head from "next/head";
+const Timeline = React.lazy(() => import("@/components/Timeline/Timeline"));
+const TechStack = React.lazy(() => import("@/components/Techstack"));
+const Image = React.lazy(() => import("next/image"));
+
+
 
 export const metadata = {
   title: "O mně",
@@ -144,15 +148,19 @@ export default function OMne() {
             </p>
           </div>
 
-          <TechStack />
-        </section>
+          <Suspense fallback={<div>Načítání tech stacku...</div>}>
+  <TechStack />
+</Suspense>
+</section>
 
-        <Timeline
-          data={data}
-          heading="Můj příběh"
-          subheading="Cesta, která mě přivedla až tam, kde teď jsem."
-        />
-      </PageWrapper>
+<Suspense fallback={<div>Načítání časové osy...</div>}>
+  <Timeline
+    data={data}
+    heading="Můj příběh"
+    subheading="Cesta, která mě přivedla až tam, kde teď jsem."
+  />
+</Suspense>
+</PageWrapper>
     </>
   );
 }
