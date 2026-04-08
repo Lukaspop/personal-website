@@ -1,18 +1,34 @@
 const path = require("path");
+const TerserPlugin = require("terser-webpack-plugin");
+const CssMinimizerPlugin = require("css-minimizer-webpack-plugin");
 
 module.exports = {
   optimization: {
-    minimize: true,
+    minimize: true, // Enable minification for both JS and CSS
 
-    webpack(config: any, { isProduction }: { isProduction: boolean }) {
+    // Customizing Webpack config for production
+    webpack(config:any, { isProduction }:{isProduction: string}) {
       if (isProduction) {
-        config.optimization.minimize = true;
+        config.optimization.minimizer = [
+          // Minify JavaScript with Terser
+          new TerserPlugin({
+            terserOptions: {
+              compress: {
+                drop_console: true, // Removes console logs in production
+              },
+            },
+          }),
+          // Minify CSS with CssMinimizerPlugin
+          new CssMinimizerPlugin(),
+        ];
       }
 
+      // Split chunks configuration (this ensures better chunking for JS)
       config.optimization.splitChunks = {
         chunks: "all",
       };
 
+      // Path aliases for better imports
       config.resolve.alias = {
         ...config.resolve.alias,
         "@components": path.resolve(__dirname, "src/components"),
@@ -23,9 +39,10 @@ module.exports = {
     },
 
     experimental: {
-      optimizeFonts: true,
+      optimizeFonts: true, // Ensures font optimization
     },
 
+    // Headers for caching static assets
     async headers() {
       return [
         {
