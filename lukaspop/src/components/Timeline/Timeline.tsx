@@ -16,7 +16,7 @@ type Props = {
   subheading: string;
 };
 
-export default function Timeline({ data, heading, subheading }: Props) {
+export  function Timeline({ data, heading, subheading }: Props) {
   const sectionRef = useRef<HTMLDivElement>(null);
   const timelineRef = useRef<HTMLDivElement>(null);
   const dotRefs = useRef<(HTMLDivElement | null)[]>([]);

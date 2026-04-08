@@ -33,7 +33,7 @@ function hexToRgba(hex: string, alpha: number) {
   return `rgba(${r}, ${g}, ${b}, ${alpha})`;
 }
 
-export default function ServiceCard({ title, description, icon, iconColor = "#ffffff" }: ServiceCardProps) {
+export function ServiceCard({ title, description, icon, iconColor = "#ffffff" }: ServiceCardProps) {
   const accent = iconColor;
   const iconBg = hexToRgba(accent, 0.18);
 

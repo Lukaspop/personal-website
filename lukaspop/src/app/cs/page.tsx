@@ -1,13 +1,9 @@
-import { Suspense } from "react"; // Import Suspense for lazy loading
-import Head from "next/head";
+import { ServiceCard } from "@/components/ServiceCard";
+import ProjectCard from "@/components/ProjectCard";
+import WaveEffects from "@/components/WaveEffect";
 import { Code, Palette, Zap } from "lucide-react";
+import Head from "next/head";
 import { Poppins } from "next/font/google";
-import React from "react";
-
-// Lazy-load the components
-const ServiceCard = React.lazy(() => import("@/components/ServiceCard"));
-const ProjectCard = React.lazy(() => import("@/components/ProjectCard"));
-const WaveEffects = React.lazy(() => import("@/components/WaveEffect"));
 
 const poppins = Poppins({
   subsets: ["latin"],
@@ -25,9 +21,7 @@ export default function Home() {
       </Head>
       <main className="relative overflow-hidden">
         <section className="relative flex min-h-dvh items-center justify-center overflow-hidden">
-          <Suspense fallback={<div>Načítání efektů...</div>}>
-            <WaveEffects />
-          </Suspense>
+          <WaveEffects />
           <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent via-70% to-[#020202]" />
           <div className="relative z-10 px-6 text-center">
             <h1
@@ -42,7 +36,6 @@ export default function Home() {
             </p>
           </div>
         </section>
-
         <section id="who-am-i" className="bg-[#020202] pt-24">
           <div className="mx-auto max-w-7xl px-6">
             <h2 className="text-primary font-bold">Kdo jsem?</h2>
@@ -58,97 +51,87 @@ export default function Home() {
 
             <p className="mt-4 text-neutral-400">
               Pokud byste se o&nbsp;mně zajímali více do hloubky, přečtěte si více pod tímto odkazem
-              →{" "}
+              →
               <a href="cs/o-mne" className="text-primary ml-2 hover:underline">
                 Více o mně
               </a>
             </p>
           </div>
         </section>
-
         <section id="services" className="bg-[#020202] pt-24">
           <div className="mx-auto max-w-7xl px-6">
             <header className="mb-12 max-w-2xl">
               <h2 className="text-primary text-3xl font-bold md:text-4xl">Nabízené služby</h2>
             </header>
-
             <div className="grid gap-6 md:grid-cols-3">
-              {/* Lazy Load ServiceCards */}
-              <Suspense fallback={<div>Načítání služeb...</div>}>
-                <ServiceCard
-                  title="Prezentační web na míru"
-                  description="Provedu vás celým procesem od samotného návrhu po nasazení a vytvořím web, který pomůže zviditelnit vás či vaši značku."
-                  icon={<Code size={20} />}
-                  iconColor="#6569f0"
-                />
-                <ServiceCard
-                  title="Webová aplikace"
-                  description="Vytvořím řešení na míru, které vám ušetří čas a zlepší uživatelský zážitek na vašem webu."
-                  icon={<Palette size={20} />}
-                  iconColor="#fa2d37"
-                />
-                <ServiceCard
-                  title="SEO & Online viditelnost"
-                  description="Zlepším vaši pozici ve vyhledávačích, nastavím Google Analytics, vytvořím Google Business a odstraním nedostatky vašeho webu."
-                  icon={<Zap size={20} />}
-                  iconColor="#f59f1d"
-                />
-              </Suspense>
+              <ServiceCard
+                title="Prezentační web na míru"
+                description="Provedu vás celým procesem od samotného návrhu po nasazení a vytvořím web, který pomůže zviditelnit vás či vaši značku."
+                icon={<Code size={20} />}
+                iconColor="#6569f0"
+              />
+
+              <ServiceCard
+                title="Webová aplikace"
+                description="Vytvořím řešení na míru, které vám ušetří čas a zlepší uživatelský zážitek na vašem webu."
+                icon={<Palette size={20} />}
+                iconColor="#fa2d37"
+              />
+
+              <ServiceCard
+                title="SEO & Online viditelnost"
+                description="Zlepším vaši pozici ve vyhledávačích, nastavím Google Analytics, vytvořím Google Business a odstraním nedostatky vašeho webu."
+                icon={<Zap size={20} />}
+                iconColor="#f59f1d"
+              />
             </div>
           </div>
         </section>
-
         <section id="projekty" className="bg-[#020202] pt-24">
           <div className="mx-auto max-w-7xl px-6">
             <h2 className="text-primary mb-4 text-3xl font-bold md:text-4xl">Výběr z projektů</h2>
 
             <p className="mb-16 max-w-4xl leading-relaxed text-neutral-400">
-              Toto je jen malý výběr mé práce. Pokud vás zajímá více projektů a detailů, navštivte →{" "}
+              Toto je jen malý výběr mé práce. Pokud vás zajímá více projektů a detailů, navštivte →
               <a href="/cs/projekty" className="text-primary ml-2 hover:underline">
                 všechny projekty
               </a>
             </p>
+            <ProjectCard
+              title="Osobní stránka"
+              description="Tento projekt je mým nejnovějším dílem a má pro mě velkou osobní hodnotu. Největší výzvou byl samotný návrh stránky, ke kterému jsem se dostal až po několika iteracích a hledání správného směru."
+              imagePath="/private-images/personalWebsiteProject.jpg"
+              imageAlt="Screenshot osobní webové stránky Lukaspop"
+              align="left"
+              year="2026"
+              skills={["Figma", "Next.js", "Tailwind", "SEO"]}
+              visitLink="/cs"
+              locale="cs"
+            />
 
-            {/* Lazy Load ProjectCards */}
-            <Suspense fallback={<div>Načítání projektů...</div>}>
-              <ProjectCard
-                title="Osobní stránka"
-                description="Tento projekt je mým nejnovějším dílem a má pro mě velkou osobní hodnotu. Největší výzvou byl samotný návrh stránky, ke kterému jsem se dostal až po několika iteracích a hledání správného směru."
-                imagePath="/private-images/personalWebsiteProject.jpg"
-                imageAlt="Screenshot osobní webové stránky Lukaspop"
-                align="left"
-                year="2026"
-                skills={["Figma", "Next.js", "Tailwind", "SEO"]}
-                visitLink="/cs"
-                locale="cs"
-              />
+            <ProjectCard
+              title="Cutouts"
+              description="Webová stránka pro irskou kapelu Cutouts vznikla na základě jejich loga, Instagramu a nahrávky živého vystoupení. Z těchto podkladů jsem vytvořil několik návrhů ve Figmě, ze kterých postupně vznikla finální podoba webu. Artwork vytvořený pro stránku by se v budoucnu mohl objevit i na jejich merch."
+              imagePath="/private-images/cutoutsWebsiteProject.jpg"
+              imageAlt="Screenshot webové stránky kapely Cutouts"
+              align="right"
+              year="2025"
+              skills={["Figma", "WordPress", "MailerLite"]}
+              visitLink="https://cutouts.ie"
+              locale="cs"
+            />
 
-              <ProjectCard
-                title="Cutouts"
-                description="Webová stránka pro irskou kapelu Cutouts vznikla na základě jejich loga, Instagramu a nahrávky živého vystoupení. Z těchto podkladů jsem vytvořil několik návrhů ve Figmě, ze kterých postupně vznikla finální podoba webu. Artwork vytvořený pro stránku by se v budoucnu mohl objevit i na jejich merch."
-                imagePath="/private-images/cutoutsWebsiteProject.jpg"
-                imageAlt="Screenshot webové stránky kapely Cutouts"
-                align="right"
-                year="2025"
-                skills={["Figma", "WordPress", "MailerLite"]}
-                visitLink="https://cutouts.ie"
-                locale="cs"
-                as="h2"
-              />
-
-              <ProjectCard
-                title="Pixel Dread"
-                description="Na tomto projektu jsem se poprvé setkal se SEO. Jde o web k mobilní aplikaci Pixel Dread od Jana S. Kostlána. Backend projektu je velmi kvalitní, zejména systém instancí pro komunikaci, ale vizuální stránka webu podle mě neodpovídá jeho technické úrovni. Proto připravuji redesign webu a úpravu některých SEO prvků. Projekt je také součástí mé maturitní práce."
-                imagePath="/private-images/pixeldreadWebsiteProject.jpg"
-                imageAlt="Screenshot webové stránky Pixel Dread"
-                align="left"
-                year="2025"
-                skills={["ASP.NET", "REST API", "React", "SQL", "SEO", "Google Analytics"]}
-                visitLink="https://pixeldread.com"
-                locale="cs"
-                as="h2"
-              />
-            </Suspense>
+            <ProjectCard
+              title="Pixel Dread"
+              description="Na tomto projektu jsem se poprvé setkal se SEO. Jde o web k mobilní aplikaci Pixel Dread od Jana S. Kostlána. Backend projektu je velmi kvalitní, zejména systém instancí pro komunikaci, ale vizuální stránka webu podle mě neodpovídá jeho technické úrovni. Proto připravuji redesign webu a úpravu některých SEO prvků. Projekt je také součástí mé maturitní práce."
+              imagePath="/private-images/pixeldreadWebsiteProject.jpg"
+              imageAlt="Screenshot webové stránky Pixel Dread"
+              align="left"
+              year="2025"
+              skills={["ASP.NET", "REST API", "React", "SQL", "SEO", "Google Analytics"]}
+              visitLink="https://pixeldread.com"
+              locale="cs"
+            />
           </div>
         </section>
       </main>
