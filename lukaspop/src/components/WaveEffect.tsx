@@ -12,8 +12,10 @@ export default function WaveEffects() {
     const init = async () => {
       if (!vantaRef.current) return;
 
-      const WAVES = (await import("vanta/dist/vanta.waves.min")).default;
+      // Dynamically import the Vanta Waves effect
+      const { default: WAVES } = await import("vanta/dist/vanta.waves.min");
 
+      // Initialize the Vanta Waves effect
       effect = WAVES({
         el: vantaRef.current,
         THREE,
@@ -28,12 +30,14 @@ export default function WaveEffects() {
       });
     };
 
+    // Initialize the effect
     init();
 
+    // Cleanup the effect when the component unmounts
     return () => {
       if (effect) effect.destroy();
     };
-  }, []);
+  }, []); // Empty dependency array ensures the effect is initialized only once
 
   return <div ref={vantaRef} className="absolute inset-0 h-full w-full" />;
 }
